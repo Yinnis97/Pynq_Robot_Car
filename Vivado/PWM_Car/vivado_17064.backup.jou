@@ -1,0 +1,57 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Fri May  2 14:39:31 2025
+# Process ID: 17064
+# Current directory: C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent9688 C:\DevWorks\Robot_Car_PYNQ\Vivado\PWM_Car\PWM_Car.xpr
+# Log file: C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/vivado.log
+# Journal file: C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car\vivado.jou
+# Running On        :5CD322B2FW
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26100
+# Processor Detail  :AMD Ryzen 5 PRO 7530U with Radeon Graphics     
+# CPU Frequency     :1996 MHz
+# CPU Physical cores:6
+# CPU Logical cores :12
+# Host memory       :16442 MB
+# Swap memory       :1073 MB
+# Total Virtual     :17516 MB
+# Available Virtual :8489 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+set_property -dict [list \
+  CONFIG.PCW_I2C0_PERIPHERAL_ENABLE {1} \
+  CONFIG.PCW_I2C1_PERIPHERAL_ENABLE {1} \
+] [get_bd_cells processing_system7_0]
+endgroup
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins processing_system7_0/IIC_0]
+endgroup
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins processing_system7_0/IIC_1]
+endgroup
+save_bd_design
+reset_run design_1_processing_system7_0_1_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 12
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+set_property IOSTANDARD LVCMOS33 [get_ports [list IIC_0_0_scl_io IIC_0_0_sda_io]]
+set_property IOSTANDARD LVCMOS33 [get_ports [list IIC_1_0_scl_io IIC_1_0_sda_io]]
+set_property package_pin "" [get_ports [list  IIC_0_0_scl_io]]
+place_ports IIC_0_0_scl_io P16
+place_ports IIC_0_0_sda_io P15
+place_ports IIC_1_0_sda_io U19
+place_ports IIC_1_0_scl_io U12
+place_ports IIC_1_0_sda_io T14
+save_constraints
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/Robot_Car_XSA.xsa

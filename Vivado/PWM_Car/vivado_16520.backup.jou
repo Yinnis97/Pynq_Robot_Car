@@ -1,0 +1,50 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Fri Apr 25 15:13:47 2025
+# Process ID: 16520
+# Current directory: C:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent20956 C:\DevWorks\Robot_Car_Pwm\Vivado\PWM_Car\PWM_Car.xpr
+# Log file: C:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/vivado.log
+# Journal file: C:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car\vivado.jou
+# Running On        :5CD322B2FW
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26100
+# Processor Detail  :AMD Ryzen 5 PRO 7530U with Radeon Graphics     
+# CPU Frequency     :1996 MHz
+# CPU Physical cores:6
+# CPU Logical cores :12
+# Host memory       :16442 MB
+# Swap memory       :1073 MB
+# Total Virtual     :17516 MB
+# Available Virtual :5371 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:SpeedSensor:1.0 SpeedSensor_0
+endgroup
+delete_bd_objs [get_bd_cells SpeedSensor_0]
+update_ip_catalog -rebuild
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:SpeedSensor:1.0 SpeedSensor_0
+endgroup
+delete_bd_objs [get_bd_cells SpeedSensor_0]
+open_bd_design {C:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:user:SpeedSensor:1.0 SpeedSensor_0
+endgroup
+ipx::edit_ip_in_project -upgrade true -name SpeedSensor_v1_0_project -directory C:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.tmp/SpeedSensor_v1_0_project c:/DevWorks/Robot_Car_Pwm/Vivado/ip_repo/SpeedSensor_1_0/component.xml
+update_compile_order -fileset sources_1
+close_project
+delete_bd_objs [get_bd_cells SpeedSensor_0]
+update_ip_catalog -delete_ip xilinx.com:user:SpeedSensor:1.0 -repo_path c:/DevWorks/Robot_Car_Pwm/Vivado/ip_repo/SpeedSensor_1_0
+config_ip_cache -clear_output_repo
+update_ip_catalog -add_ip C:/DevWorks/Robot_Car_Pwm/Vivado/ip_repo/SpeedSensor_1_0/xilinx.com_user_SpeedSensor_1.0.zip -repo_path c:/DevWorks/Robot_Car_Pwm/Vivado/ip_repo/SpeedSensor_1_0
+ipx::edit_ip_in_project -upgrade true -name SpeedSensor_v1_0_project -directory C:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.tmp/SpeedSensor_v1_0_project c:/DevWorks/Robot_Car_Pwm/Vivado/ip_repo/SpeedSensor_1_0/xilinx.com_user_SpeedSensor_1.0/component.xml
+update_compile_order -fileset sources_1
+close_project

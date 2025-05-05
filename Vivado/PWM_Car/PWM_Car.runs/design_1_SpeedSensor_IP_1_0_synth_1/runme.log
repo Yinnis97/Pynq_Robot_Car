@@ -1,0 +1,353 @@
+
+*** Running vivado
+    with args -log design_1_SpeedSensor_IP_1_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_SpeedSensor_IP_1_0.tcl
+
+
+
+****** Vivado v2024.1 (64-bit)
+  **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+  **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+  **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+  **** Start of session at: Sat Apr 26 14:56:40 2025
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source design_1_SpeedSensor_IP_1_0.tcl -notrace
+create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 487.691 ; gain = 202.879
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/DevWorks/Robot_Car_Pwm/Vivado/ip_repo/SpeedSensor_IP_1_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/Xilinx/Vivado/2024.1/data/ip'.
+INFO: [IP_Flow 19-6924] IPCACHE: Running cache check for IP inst: design_1_SpeedSensor_IP_1_0
+Command: synth_design -top design_1_SpeedSensor_IP_1_0 -part xc7z020clg400-1 -incremental_mode off -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z020'
+INFO: [Device 21-403] Loading part xc7z020clg400-1
+INFO: [Device 21-9227] Part: xc7z020clg400-1 does not have CEAM library.
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 4728
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:05 ; elapsed = 00:00:05 . Memory (MB): peak = 1377.125 ; gain = 445.086
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'design_1_SpeedSensor_IP_1_0' [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ip/design_1_SpeedSensor_IP_1_0/synth/design_1_SpeedSensor_IP_1_0.vhd:87]
+	Parameter C_S00_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S00_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'SpeedSensor_IP' declared at 'c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP.vhd:5' bound to instance 'U0' of component 'SpeedSensor_IP' [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ip/design_1_SpeedSensor_IP_1_0/synth/design_1_SpeedSensor_IP_1_0.vhd:158]
+INFO: [Synth 8-638] synthesizing module 'SpeedSensor_IP' [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP.vhd:53]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'SpeedSensor_IP_slave_lite_v1_0_S00_AXI' declared at 'c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP_slave_lite_v1_0_S00_AXI.vhd:5' bound to instance 'SpeedSensor_IP_slave_lite_v1_0_S00_AXI_inst' of component 'SpeedSensor_IP_slave_lite_v1_0_S00_AXI' [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP.vhd:95]
+INFO: [Synth 8-638] synthesizing module 'SpeedSensor_IP_slave_lite_v1_0_S00_AXI' [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP_slave_lite_v1_0_S00_AXI.vhd:90]
+INFO: [Synth 8-226] default block is never used [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP_slave_lite_v1_0_S00_AXI.vhd:241]
+INFO: [Synth 8-226] default block is never used [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP_slave_lite_v1_0_S00_AXI.vhd:371]
+WARNING: [Synth 8-614] signal 'distance_i' is read in the process but is not in the sensitivity list [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP_slave_lite_v1_0_S00_AXI.vhd:366]
+WARNING: [Synth 8-614] signal 'speed_i' is read in the process but is not in the sensitivity list [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP_slave_lite_v1_0_S00_AXI.vhd:366]
+INFO: [Synth 8-3491] module 'speedsensor' declared at 'c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/src/speedsensor.vhd:34' bound to instance 'Core1' of component 'speedsensor' [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP_slave_lite_v1_0_S00_AXI.vhd:407]
+INFO: [Synth 8-638] synthesizing module 'speedsensor' [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/src/speedsensor.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'speedsensor' (0#1) [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/src/speedsensor.vhd:45]
+INFO: [Synth 8-256] done synthesizing module 'SpeedSensor_IP_slave_lite_v1_0_S00_AXI' (0#1) [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP_slave_lite_v1_0_S00_AXI.vhd:90]
+INFO: [Synth 8-256] done synthesizing module 'SpeedSensor_IP' (0#1) [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP.vhd:53]
+INFO: [Synth 8-256] done synthesizing module 'design_1_SpeedSensor_IP_1_0' (0#1) [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ip/design_1_SpeedSensor_IP_1_0/synth/design_1_SpeedSensor_IP_1_0.vhd:87]
+WARNING: [Synth 8-6014] Unused sequential element axi_awaddr_reg was removed.  [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP_slave_lite_v1_0_S00_AXI.vhd:186]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg0_reg was removed.  [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP_slave_lite_v1_0_S00_AXI.vhd:234]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg1_reg was removed.  [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP_slave_lite_v1_0_S00_AXI.vhd:235]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg2_reg was removed.  [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP_slave_lite_v1_0_S00_AXI.vhd:236]
+WARNING: [Synth 8-6014] Unused sequential element slv_reg3_reg was removed.  [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP_slave_lite_v1_0_S00_AXI.vhd:237]
+WARNING: [Synth 8-3848] Net distance in module/entity SpeedSensor_IP_slave_lite_v1_0_S00_AXI does not have driver. [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP_slave_lite_v1_0_S00_AXI.vhd:22]
+WARNING: [Synth 8-3848] Net speed in module/entity SpeedSensor_IP_slave_lite_v1_0_S00_AXI does not have driver. [c:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ipshared/6d52/hdl/SpeedSensor_IP_slave_lite_v1_0_S00_AXI.vhd:23]
+WARNING: [Synth 8-7129] Port distance[31] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[30] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[29] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[28] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[27] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[26] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[25] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[24] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[23] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[22] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[21] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[20] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[19] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[18] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[17] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[16] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[15] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[14] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[13] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[12] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[11] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[10] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[9] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[8] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[7] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[6] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[5] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[4] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[3] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[2] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[1] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port distance[0] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[31] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[30] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[29] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[28] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[27] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[26] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[25] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[24] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[23] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[22] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[21] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[20] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[19] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[18] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[17] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[16] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[15] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[14] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[13] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[12] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[11] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[10] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[9] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[8] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[7] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[6] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[5] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[4] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[3] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[2] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[1] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port speed[0] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[3] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[2] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[1] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWADDR[0] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[2] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[1] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_AWPROT[0] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[31] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[30] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[29] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[28] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[27] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[26] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[25] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[24] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[23] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[22] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[21] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[20] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[19] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[18] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[17] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[16] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[15] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[14] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[13] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[12] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[11] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[10] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[9] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[8] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[7] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[6] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[5] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[4] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_AXI_WDATA[3] in module SpeedSensor_IP_slave_lite_v1_0_S00_AXI is either unconnected or has no load
+INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1491.719 ; gain = 559.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1491.719 ; gain = 559.680
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1491.719 ; gain = 559.680
+---------------------------------------------------------------------------------
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1491.719 ; gain = 0.000
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1589.094 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1589.363 ; gain = 0.270
+INFO: [Designutils 20-5008] Incremental synthesis strategy off
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1589.363 ; gain = 657.324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z020clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1589.363 ; gain = 657.324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1589.363 ; gain = 657.324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:14 . Memory (MB): peak = 1589.363 ; gain = 657.324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 2     
+	                4 Bit    Registers := 1     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 7     
++---Muxes : 
+	   4 Input   32 Bit        Muxes := 1     
+	   2 Input    1 Bit        Muxes := 6     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 220 (col length:60)
+BRAMs: 280 (col length: RAMB18 60 RAMB36 30)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+WARNING: [Synth 8-7080] Parallel synthesis criteria is not met
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1589.363 ; gain = 657.324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1589.363 ; gain = 657.324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1589.363 ; gain = 657.324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:20 ; elapsed = 00:00:21 . Memory (MB): peak = 1589.363 ; gain = 657.324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1589.363 ; gain = 657.324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1589.363 ; gain = 657.324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1589.363 ; gain = 657.324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1589.363 ; gain = 657.324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1589.363 ; gain = 657.324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1589.363 ; gain = 657.324
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-------+------+
+|      |Cell   |Count |
++------+-------+------+
+|1     |CARRY4 |    22|
+|2     |LUT1   |     4|
+|3     |LUT2   |     2|
+|4     |LUT3   |     3|
+|5     |LUT4   |    37|
+|6     |LUT5   |     2|
+|7     |LUT6   |     5|
+|8     |FDRE   |   158|
+|9     |FDSE   |     3|
++------+-------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:24 ; elapsed = 00:00:25 . Memory (MB): peak = 1589.363 ; gain = 657.324
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 111 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:23 . Memory (MB): peak = 1589.363 ; gain = 559.680
+Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:25 . Memory (MB): peak = 1589.363 ; gain = 657.324
+INFO: [Project 1-571] Translating synthesized netlist
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1589.363 ; gain = 0.000
+INFO: [Netlist 29-17] Analyzing 22 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1589.363 ; gain = 0.000
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Synth Design complete | Checksum: f87f82
+INFO: [Common 17-83] Releasing license: Synthesis
+34 Infos, 110 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1589.363 ; gain = 1087.988
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1589.363 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.runs/design_1_SpeedSensor_IP_1_0_synth_1/design_1_SpeedSensor_IP_1_0.dcp' has been generated.
+INFO: [Coretcl 2-1648] Added synthesis output to IP cache for IP design_1_SpeedSensor_IP_1_0, cache-ID = a555331c1bdd520c
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1589.363 ; gain = 0.000
+INFO: [Common 17-1381] The checkpoint 'C:/DevWorks/Robot_Car_Pwm/Vivado/PWM_Car/PWM_Car.runs/design_1_SpeedSensor_IP_1_0_synth_1/design_1_SpeedSensor_IP_1_0.dcp' has been generated.
+INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_SpeedSensor_IP_1_0_utilization_synth.rpt -pb design_1_SpeedSensor_IP_1_0_utilization_synth.pb
+INFO: [Common 17-206] Exiting Vivado at Sat Apr 26 14:57:20 2025...

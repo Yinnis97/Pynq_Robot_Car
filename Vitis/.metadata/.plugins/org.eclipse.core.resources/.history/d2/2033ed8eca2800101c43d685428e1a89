@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="ASCII"?>
+<sdkproject:SdkProject xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:sdkproject="http://www.xilinx.com/sdkproject" name="PWM_Car_App" location="C:/DevWorks/Robot_Car_Pwm/Vitis/PWM_Car_App" platform="C:/DevWorks/Robot_Car_PYNQ/Vitis/PWM_Car_XSA/export/PWM_Car_XSA/PWM_Car_XSA.xpfm" platformUID="xilinx:pynq-z2::0.0(custom)" systemProject="PWM_Car_App_system" sysConfig="PWM_Car_XSA" runtime="cpp" cpu="standalone_ps7_cortexa9_0" cpuInstance="ps7_cortexa9_0" os="standalone" mssSignature="91354d40c5786b2c7eeaf6a6c92b20b2">
+  <configuration name="Debug" id="xilinx.gnu.armv7.exe.debug.320453648" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <configuration name="Release" id="xilinx.gnu.armv7.exe.release.2044527516" dirty="true">
+    <configBuildOptions xsi:type="sdkproject:SdkOptions"/>
+    <lastBuildOptions xsi:type="sdkproject:SdkOptions"/>
+  </configuration>
+  <template appTemplateName="hello_world"/>
+</sdkproject:SdkProject>

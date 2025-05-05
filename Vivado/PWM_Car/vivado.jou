@@ -1,0 +1,89 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sat May  3 21:49:56 2025
+# Process ID: 13316
+# Current directory: C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent16948 C:\DevWorks\Robot_Car_PYNQ\Vivado\PWM_Car\PWM_Car.xpr
+# Log file: C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/vivado.log
+# Journal file: C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car\vivado.jou
+# Running On        :5CD322B2FW
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26100
+# Processor Detail  :AMD Ryzen 5 PRO 7530U with Radeon Graphics     
+# CPU Frequency     :1996 MHz
+# CPU Physical cores:6
+# CPU Logical cores :12
+# Host memory       :16442 MB
+# Swap memory       :1073 MB
+# Total Virtual     :17516 MB
+# Available Virtual :9342 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.xpr
+update_compile_order -fileset sources_1
+open_bd_design {C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.srcs/sources_1/bd/design_1/design_1.bd}
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+endgroup
+set_property -dict [list \
+  CONFIG.C_IS_DUAL {1} \
+  CONFIG.GPIO2_BOARD_INTERFACE {sws_2bits} \
+  CONFIG.GPIO_BOARD_INTERFACE {btns_4bits} \
+] [get_bd_cells axi_gpio_0]
+set_property name gpio_btns_sws [get_bd_cells axi_gpio_0]
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins gpio_btns_sws/GPIO]
+endgroup
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins gpio_btns_sws/GPIO2]
+endgroup
+startgroup
+create_bd_cell -type ip -vlnv xilinx.com:ip:axi_gpio:2.0 axi_gpio_0
+endgroup
+set_property -dict [list \
+  CONFIG.GPIO2_BOARD_INTERFACE {rgb_led} \
+  CONFIG.GPIO_BOARD_INTERFACE {leds_4bits} \
+] [get_bd_cells axi_gpio_0]
+set_property name gpio_leds_rgb [get_bd_cells axi_gpio_0]
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins gpio_leds_rgb/GPIO]
+endgroup
+startgroup
+make_bd_intf_pins_external  [get_bd_intf_pins gpio_leds_rgb/GPIO2]
+endgroup
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/gpio_btns_sws/S_AXI} ddr_seg {Auto} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins gpio_btns_sws/S_AXI]
+apply_bd_automation -rule xilinx.com:bd_rule:axi4 -config { Clk_master {/processing_system7_0/FCLK_CLK0 (100 MHz)} Clk_slave {Auto} Clk_xbar {/processing_system7_0/FCLK_CLK0 (100 MHz)} Master {/processing_system7_0/M_AXI_GP0} Slave {/gpio_leds_rgb/S_AXI} ddr_seg {Auto} intc_ip {/ps7_0_axi_periph} master_apm {0}}  [get_bd_intf_pins gpio_leds_rgb/S_AXI]
+endgroup
+regenerate_bd_layout
+save_bd_design
+reset_run design_1_xbar_1_synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 12
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+open_bd_design {C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.srcs/sources_1/bd/design_1/design_1.bd}
+delete_bd_objs [get_bd_intf_nets gpio_leds_rgb_GPIO] [get_bd_intf_ports GPIO_1]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {leds_4bits ( 4 LEDs ) } Manual_Source {Auto}}  [get_bd_intf_pins gpio_leds_rgb/GPIO]
+delete_bd_objs [get_bd_intf_nets gpio_leds_rgb_GPIO2] [get_bd_intf_ports GPIO2_1]
+delete_bd_objs [get_bd_intf_nets gpio_btns_sws_GPIO2] [get_bd_intf_ports GPIO2_0]
+delete_bd_objs [get_bd_intf_nets gpio_btns_sws_GPIO] [get_bd_intf_ports GPIO_0]
+startgroup
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {btns_4bits ( 4 Buttons ) } Manual_Source {Auto}}  [get_bd_intf_pins gpio_btns_sws/GPIO]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {sws_2bits ( 2 Switches ) } Manual_Source {Auto}}  [get_bd_intf_pins gpio_btns_sws/GPIO2]
+apply_bd_automation -rule xilinx.com:bd_rule:board -config { Board_Interface {rgb_led ( 2 RGB LEDS ) } Manual_Source {Auto}}  [get_bd_intf_pins gpio_leds_rgb/GPIO2]
+endgroup
+reset_run design_1_axi_gpio_0_0_synth_1
+reset_run design_1_axi_gpio_0_1_synth_1
+save_bd_design
+reset_run synth_1
+launch_runs synth_1 -jobs 12
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
+launch_runs impl_1 -to_step write_bitstream -jobs 12
+wait_on_run impl_1
+write_hw_platform -fixed -include_bit -force -file C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/Robot_Car_XSA.xsa

@@ -1,0 +1,37 @@
+#-----------------------------------------------------------
+# Vivado v2024.1 (64-bit)
+# SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
+# IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
+# SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
+# Start of session at: Sat Apr 26 13:40:18 2025
+# Process ID: 19632
+# Current directory: C:/DevWorks/Robot_Car_Pwm/Vivado/ip_repo
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent13432 C:\DevWorks\Robot_Car_Pwm\Vivado\ip_repo\edit_SpeedSensor_IP_v1_0.xpr
+# Log file: C:/DevWorks/Robot_Car_Pwm/Vivado/ip_repo/vivado.log
+# Journal file: C:/DevWorks/Robot_Car_Pwm/Vivado/ip_repo\vivado.jou
+# Running On        :5CD322B2FW
+# Platform          :Windows Server 2016 or Windows 10
+# Operating System  :26100
+# Processor Detail  :AMD Ryzen 5 PRO 7530U with Radeon Graphics     
+# CPU Frequency     :1996 MHz
+# CPU Physical cores:6
+# CPU Logical cores :12
+# Host memory       :16442 MB
+# Swap memory       :4282 MB
+# Total Virtual     :20725 MB
+# Available Virtual :3783 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/DevWorks/Robot_Car_Pwm/Vivado/ip_repo/edit_SpeedSensor_IP_v1_0.xpr
+update_compile_order -fileset sources_1
+ipx::open_ipxact_file {C:\DevWorks\Robot_Car_Pwm\Vivado\ip_repo\SpeedSensor_IP_1_0\component.xml}
+set_property core_revision 3 [ipx::current_core]
+ipx::create_xgui_files [ipx::current_core]
+ipx::update_checksums [ipx::current_core]
+ipx::check_integrity [ipx::current_core]
+ipx::save_core [ipx::current_core]
+update_ip_catalog -rebuild -repo_path c:/DevWorks/Robot_Car_Pwm/Vivado/ip_repo/SpeedSensor_IP_1_0
+ipx::check_integrity -quiet -xrt [ipx::current_core]
+ipx::archive_core {c:\DevWorks\Robot_Car_Pwm\Vivado\ip_repo\SpeedSensor_IP_1_0\xilinx.com_user_SpeedSensor_IP_1.0.zip} [ipx::current_core]
+ipx::unload_core component_1
+ipx::open_ipxact_file {C:\DevWorks\Robot_Car_Pwm\Vivado\ip_repo\SpeedSensor_IP_1_0\component.xml}

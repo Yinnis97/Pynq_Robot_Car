@@ -1,0 +1,90 @@
+#ifndef GLOBALS_H
+#define GLOBALS_H
+
+
+#include <stdio.h>
+#include "platform.h"
+#include "xil_printf.h"
+#include "sleep.h"
+#include "SpeedSensor_IP.h"
+#include "xtmrctr.h"
+#include "xparameters.h"
+#include "xil_types.h"
+#include "xgpiops.h"
+#include "xiicps.h"
+#include "xinterrupt_wrap.h"
+#include "xgpio.h"
+#include "HC_SR04_IP.h"
+
+#define EXIT_FAILURE					1
+
+// GPIO
+#define GPIO_BTN_SWS_ID					XPAR_GPIO_BTNS_SWS_DEVICE_ID
+#define GPIO_LEDS_RGB_ID				XPAR_GPIO_LEDS_RGB_DEVICE_ID
+#define LEDS_CHANNEL 					1
+#define RGB_CHANNEL 					2
+#define BTNS_CHANNEL 					1
+#define SWS_CHANNEL 					2
+
+// TIMER
+#define AXI_TIMER_ID_1					XPAR_AXI_TIMER_0_DEVICE_ID
+#define AXI_TIMER_ID_2					XPAR_AXI_TIMER_1_DEVICE_ID
+#define AXI_TIMER_ID_3					XPAR_AXI_TIMER_2_DEVICE_ID
+#define AXI_TIMER_ID_4					XPAR_AXI_TIMER_3_DEVICE_ID
+#define PWM_PERIOD              		5000000    						// PWM period in (5 ms)
+#define DUTYCYCLE_DIVISOR		      	2            					// Duty cycle Divisor
+
+// IIC
+#define IIC_DEVICE_ID					XPAR_PS7_I2C_0_DEVICE_ID
+#define IIC_SLAVE_ADDR					0x68
+#define IIC_SCLK_RATE					400000
+
+// Instances
+XTmrCtr 	TimerCounterInst_4;
+XTmrCtr 	TimerCounterInst_3;
+XTmrCtr 	TimerCounterInst_2;
+XTmrCtr 	TimerCounterInst_1;
+XIicPs 		Iic;
+XGpio		gpio_in;
+XGpio		gpio_out;
+
+// MPU
+u8 MPU_wake_up_data[] = {0x6B,0};		// Wake up device
+u8 MPU_read_accx[1] =  {0x3B};		 	// MPU6050 ACCEL_XOUT_H register address
+u8 MPU_buffer[14]; 						// 14 bytes (Accel + Gyro + Temp)
+
+// Speedsensor data
+typedef struct
+{
+    uint32_t speed;
+    uint32_t distance;
+}S_Sensor_data;
+
+// MPU data
+typedef struct
+{
+	int16_t acc_x;
+	int16_t acc_y;
+	int16_t acc_z;
+	int16_t gy_x;
+	int16_t gy_y;
+	int16_t gy_z;
+	int16_t temp;
+}MPU_data;
+
+// Ultrasonic sensor
+typedef struct
+{
+	uint32_t left;
+	uint32_t right;
+}Ultra_Sensor_data;
+
+// Globals
+u32 highTime;
+u32 rv;
+S_Sensor_data speed_data_1;
+S_Sensor_data speed_data_2;
+MPU_data mpu_data;
+
+
+#endif
