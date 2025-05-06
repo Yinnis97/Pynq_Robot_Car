@@ -15,6 +15,8 @@
 #include "xinterrupt_wrap.h"
 #include "xgpio.h"
 #include "HC_SR04_IP.h"
+#include "xscugic.h"
+#include "xil_exception.h"
 
 #define EXIT_FAILURE					1
 
@@ -39,6 +41,20 @@
 #define IIC_SLAVE_ADDR					0x68
 #define IIC_SCLK_RATE					400000
 
+// INTERRUPTS
+#define INTC_DEVICE_ID					XPAR_PS7_SCUGIC_0_DEVICE_ID
+#define GPIO_INTR_MPU_ID				XPAR_GPIO_INTR_MPU_DEVICE_ID
+#define INTC_MPU_INTR_ID				XPAR_FABRIC_GPIO_INTR_MPU_IP2INTC_IRPT_INTR
+#define MPU_INT_MASK					XGPIO_IR_CH1_MASK
+
+// MPU Corrections
+#define ACC_X_CORRECTION				500  	// -500
+#define ACC_Y_CORRECTION				1500 	// -1500
+#define ACC_Z_CORRECTION				2000 	// -2000
+#define GYR_X_CORRECTION				100		// +100
+#define GYR_Y_CORRECTION				100		// +100
+#define GYR_Z_CORRECTION				30		// -30
+
 // Instances
 XTmrCtr 	TimerCounterInst_4;
 XTmrCtr 	TimerCounterInst_3;
@@ -47,6 +63,8 @@ XTmrCtr 	TimerCounterInst_1;
 XIicPs 		Iic;
 XGpio		gpio_in;
 XGpio		gpio_out;
+XGpio		gpio_intr;
+XScuGic		intc_mpu;
 
 // MPU
 u8 MPU_wake_up_data[] = {0x6B,0};		// Wake up device

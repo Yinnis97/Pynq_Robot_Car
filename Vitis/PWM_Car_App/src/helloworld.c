@@ -7,9 +7,19 @@ int main()
 
     GPIO_Initialize();
     MPU_Initialize();
+    Intc_Initialize();
+    MPU_Enable_Intr();
     PWM_Initialize();
 
     Main_Loop();
 
     return EXIT_FAILURE;
 }
+
+
+/*
+ * TO DO :
+ * 	MAKE MPU GENERATE INTERRUPTS
+ *
+ *
+ */

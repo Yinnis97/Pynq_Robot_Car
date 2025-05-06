@@ -67,3 +67,14 @@ platform config -updatehw {C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/Robot_Car_X
 platform generate -domains standalone_ps7_cortexa9_0 
 platform active {PWM_Car_XSA}
 platform generate -domains 
+platform active {PWM_Car_XSA}
+platform config -updatehw {C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/Robot_Car_XSA.xsa}
+platform generate
+platform config -updatehw {C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/Robot_Car_XSA.xsa}
+platform generate -domains 
+platform config -updatehw {C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/Robot_Car_XSA.xsa}
+platform generate
+platform config -updatehw {C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/Robot_Car_XSA.xsa}
+platform clean
+platform config -updatehw {C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/Robot_Car_XSA.xsa}
+platform generate

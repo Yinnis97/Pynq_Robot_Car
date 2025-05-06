@@ -12,6 +12,10 @@ void		Speed_Read			(void);
 void		MPU_Read			(void);
 void 		Print_Values		(void);
 void 		Check_Status		(int status,char* status_msg);
+void		MPU_Intr_Handler	(void *baseaddr);
+void		IntrSystemSetup		(void);
+void		Intc_Initialize		(void);
+void		MPU_Enable_Intr		(void);
 void 		Main_Loop			(void);
 
 
@@ -21,24 +25,22 @@ void GPIO_Initialize(void)
 
 	// Initialize
 	Status = XGpio_Initialize(&gpio_in, GPIO_BTN_SWS_ID);
-	Check_Status(Status, "MPU_Initialize -> btns");
+	Check_Status(Status, "GPIO_Initialize -> btns");
 
 	Status = XGpio_Initialize(&gpio_out, GPIO_LEDS_RGB_ID);
-	Check_Status(Status, "MPU_Initialize -> leds");
+	Check_Status(Status, "GPIO_Initialize -> leds");
+
+	Status = XGpio_Initialize(&gpio_intr, GPIO_INTR_MPU_ID);
+	Check_Status(Status, "GPIO_Initialize -> intr");
 
 	// Set Direction
+	XGpio_SetDataDirection(&gpio_in, 1, 1);
 	XGpio_SetDataDirection(&gpio_in, BTNS_CHANNEL, 1);
 	XGpio_SetDataDirection(&gpio_in, SWS_CHANNEL, 1);
 	XGpio_SetDataDirection(&gpio_out, RGB_CHANNEL, 0);
 	XGpio_SetDataDirection(&gpio_out, LEDS_CHANNEL, 0);
 
 	XGpio_DiscreteWrite(&gpio_out, LEDS_CHANNEL, 0x00);
-
-	// Enable Interupts
-	// XGpio_InterruptGlobalEnable();
-	// XGpio_InterruptEnable(&gpio_in, 0x0F);
-	// XGpio_InterruptGetStatus(&gpio_in);
-	// XGpio_InterruptClear(&gpio_in, 0x0F);
 }
 
 
@@ -58,6 +60,7 @@ void PWM_Initialize(void)
 
 	// Set hightime
 	highTime = PWM_PERIOD / DUTYCYCLE_DIVISOR;
+	XGpio_DiscreteWrite(&gpio_out, LEDS_CHANNEL, 0b1000);
 
 	// Configure PWM
 	XTmrCtr_PwmConfigure(&TimerCounterInst_1, PWM_PERIOD, highTime);
@@ -91,6 +94,7 @@ void MPU_Initialize(void)
 	Check_Status(Status, "MPU_Initialize -> XIicPs_MasterSendPolled");
 
 	while (XIicPs_BusIsBusy(&Iic));
+
 	usleep(1000);
 }
 
@@ -149,27 +153,39 @@ void HCSR04_Read(void)
 	if(ultra_data.right < 10)
 	{
 		XGpio_DiscreteWrite(&gpio_out, RGB_CHANNEL, (XGpio_DiscreteRead(&gpio_out, RGB_CHANNEL) & 0b000111) | 0b100000);
+		XTmrCtr_PwmDisable(&TimerCounterInst_2);
+		XTmrCtr_PwmDisable(&TimerCounterInst_3);
 	}
 	else if(ultra_data.right < 20)
 	{
 		XGpio_DiscreteWrite(&gpio_out, RGB_CHANNEL, (XGpio_DiscreteRead(&gpio_out, RGB_CHANNEL) & 0b000111) | 0b011000);
+		XTmrCtr_PwmDisable(&TimerCounterInst_2);
+		XTmrCtr_PwmDisable(&TimerCounterInst_3);
 	}
 	else
 	{
 		XGpio_DiscreteWrite(&gpio_out, RGB_CHANNEL, (XGpio_DiscreteRead(&gpio_out, RGB_CHANNEL) & 0b000111) | 0b010000);
+		XTmrCtr_PwmEnable(&TimerCounterInst_2);
+		XTmrCtr_PwmEnable(&TimerCounterInst_3);
 	}
 
 	if(ultra_data.left < 10)
 	{
 		XGpio_DiscreteWrite(&gpio_out, RGB_CHANNEL, (XGpio_DiscreteRead(&gpio_out, RGB_CHANNEL) & 0b111000) | 0b000100);
+		XTmrCtr_PwmDisable(&TimerCounterInst_1);
+		XTmrCtr_PwmDisable(&TimerCounterInst_4);
 	}
 	else if(ultra_data.left < 20)
 	{
 		XGpio_DiscreteWrite(&gpio_out, RGB_CHANNEL, (XGpio_DiscreteRead(&gpio_out, RGB_CHANNEL) & 0b111000) | 0b000011);
+		XTmrCtr_PwmDisable(&TimerCounterInst_1);
+		XTmrCtr_PwmDisable(&TimerCounterInst_4);
 	}
 	else
 	{
 		XGpio_DiscreteWrite(&gpio_out, RGB_CHANNEL, (XGpio_DiscreteRead(&gpio_out, RGB_CHANNEL) & 0b111000) | 0b000010);
+		XTmrCtr_PwmEnable(&TimerCounterInst_1);
+		XTmrCtr_PwmEnable(&TimerCounterInst_4);
 	}
 }
 
@@ -199,12 +215,16 @@ void MPU_Read(void)
 	//Check_Status(Status,"Main_Loop -> MasterRecvPolled");
 
 	// Parse mpu data.
-	mpu_data.acc_x = (MPU_buffer[0] << 8) | MPU_buffer[1];
-	mpu_data.acc_y = (MPU_buffer[2] << 8) | MPU_buffer[3];
-	mpu_data.acc_z = (MPU_buffer[4] << 8) | MPU_buffer[5];
-	mpu_data.gy_x  = (MPU_buffer[6] << 8) | MPU_buffer[7];
-	mpu_data.gy_y  = (MPU_buffer[8] << 8) | MPU_buffer[9];
-	mpu_data.gy_z  = (MPU_buffer[10] << 8)| MPU_buffer[11];
+	mpu_data.acc_x = ((MPU_buffer[0] << 8) | MPU_buffer[1]) - ACC_X_CORRECTION;
+	mpu_data.acc_y = ((MPU_buffer[2] << 8) | MPU_buffer[3]) - ACC_Y_CORRECTION;
+	mpu_data.acc_z = ((MPU_buffer[4] << 8) | MPU_buffer[5]) - ACC_Z_CORRECTION;
+
+	// Temperature in degrees C = (TEMP_OUT Register Value as a signed quantity)/340 + 36.53
+	mpu_data.temp  = (((MPU_buffer[6] << 8) | MPU_buffer[7]) / 340) + 36.53;
+
+	mpu_data.gy_x  = ((MPU_buffer[8] << 8) | MPU_buffer[9]) + GYR_X_CORRECTION;
+	mpu_data.gy_y  = ((MPU_buffer[10] << 8) | MPU_buffer[11]) + GYR_Y_CORRECTION;
+	mpu_data.gy_z  = ((MPU_buffer[12] << 8)| MPU_buffer[13]) - GYR_Z_CORRECTION;
 }
 
 
@@ -216,6 +236,9 @@ void Print_Values(void)
 	printf("		X = %d \n\r", mpu_data.acc_x);
 	printf("		Y = %d \n\r", mpu_data.acc_y);
 	printf("		Z = %d \n\r", mpu_data.acc_z);
+
+	printf("Temperature Data : \n\r");
+	printf("		X = %d °C\n\r", mpu_data.temp);
 
 	printf("Gyroscope Data : \n\r");
 	printf("		X = %d \n\r", mpu_data.gy_x);
@@ -246,20 +269,138 @@ void Check_Status(int status, char* status_msg)
 }
 
 
+void MPU_Intr_Handler(void *baseaddr)
+{
+	// Disable GPIO Interrupts
+	XGpio_InterruptDisable(&gpio_intr, MPU_INT_MASK);
+
+	// Ignore other interrupts
+	if((XGpio_InterruptGetStatus(&gpio_intr) & MPU_INT_MASK) != MPU_INT_MASK)
+	{
+		return;
+	}
+
+	printf("Interrupt Handler Activated! \n\r");
+
+	// Clear Interrupt
+	XGpio_InterruptClear(&gpio_intr, MPU_INT_MASK);
+
+	// Enable GPIO Interrupts
+	XGpio_InterruptEnable(&gpio_intr, MPU_INT_MASK);
+}
+
+
+void IntrSystemSetup(void)
+{
+	XGpio_InterruptEnable(&gpio_intr, MPU_INT_MASK);
+	XGpio_InterruptGlobalEnable(&gpio_intr);
+	Xil_ExceptionRegisterHandler(XIL_EXCEPTION_ID_INT,
+			(Xil_ExceptionHandler) XScuGic_InterruptHandler,&intc_mpu);
+	Xil_ExceptionEnable();
+	printf("IntrSystemSetup Succes\n\r");
+}
+
+
+void Intc_Initialize(void)
+{
+	// Interrupt Controller Init.
+	XScuGic_Config *IntcConfig;
+
+	IntcConfig = XScuGic_LookupConfig(INTC_DEVICE_ID);
+
+	XScuGic_CfgInitialize(&intc_mpu, IntcConfig,
+			IntcConfig->CpuBaseAddress);
+
+	// Interrupt Setup.
+	IntrSystemSetup();
+
+	// Connect GPIO Interrupt to handler.
+	XScuGic_Connect(&intc_mpu, INTC_MPU_INTR_ID,
+			(Xil_ExceptionHandler)MPU_Intr_Handler, &gpio_intr);
+
+	// Enable GPIO Interrupts
+	XGpio_InterruptEnable(&gpio_intr, MPU_INT_MASK);
+	XGpio_InterruptGlobalEnable(&gpio_intr);
+
+	// Enable GPIO and timer Interrupt in the controller
+	XScuGic_Enable(&intc_mpu, INTC_MPU_INTR_ID);
+
+	printf("Intc_Initialize succes\n\r");
+}
+
+
+void MPU_Enable_Intr(void)
+{
+    uint8_t buffer[2];
+    uint8_t motion_threshold = 30;
+	int Status;
+
+    // Reset all registers
+    buffer[0] = 0x68;
+    buffer[1] = 0x07;
+    Status = XIicPs_MasterSendPolled(&Iic, buffer, 2, IIC_SLAVE_ADDR);
+    while (XIicPs_BusIsBusy(&Iic));
+
+    // Configure interrupt pin
+    buffer[0] =  0x37;
+    buffer[1] = 0x10;
+    Status = XIicPs_MasterSendPolled(&Iic, buffer, 2, IIC_SLAVE_ADDR);
+    while (XIicPs_BusIsBusy(&Iic));
+
+    // Accel sensitivity
+    buffer[0] = 0x1C;
+    buffer[1] = 0x01;
+    Status = XIicPs_MasterSendPolled(&Iic, buffer, 2, IIC_SLAVE_ADDR);
+    while (XIicPs_BusIsBusy(&Iic));
+
+    // Motion Threshold
+    buffer[0] = 0x1F;
+    buffer[1] = motion_threshold;
+    Status = XIicPs_MasterSendPolled(&Iic, buffer, 2, IIC_SLAVE_ADDR);
+    while (XIicPs_BusIsBusy(&Iic));
+
+    // Set motion detection duration to 40ms
+    buffer[0] = 0x20;
+    buffer[1] = 10;
+    Status = XIicPs_MasterSendPolled(&Iic, buffer, 2, IIC_SLAVE_ADDR);
+    while (XIicPs_BusIsBusy(&Iic));
+
+    // Setting motion decrement and accelerometer start-up delay
+    buffer[0] = 0x69;
+    buffer[1] = 15;
+    Status = XIicPs_MasterSendPolled(&Iic, buffer, 2, IIC_SLAVE_ADDR);
+    while (XIicPs_BusIsBusy(&Iic));
+
+    // Turn on motion interrupt
+    buffer[0] = 0x38;
+    buffer[1] = 0x40;
+    Status = XIicPs_MasterSendPolled(&Iic, buffer, 2, IIC_SLAVE_ADDR);
+    while (XIicPs_BusIsBusy(&Iic));
+
+    printf("Status : %d \n\r",Status);
+}
+
+
 void Main_Loop(void)
 {
 	while(1)
 	{
-		PWM_Set();
+		if(XGpio_DiscreteRead(&gpio_in, SWS_CHANNEL) & 0x02)
+		{
+			PWM_Set();
+			sleep(1);
+		}
+
 		HCSR04_Read();
 		Speed_Read();
-		MPU_Read();
+		//MPU_Read();
 
 		if(XGpio_DiscreteRead(&gpio_in, SWS_CHANNEL) & 0x01)
 		{
 			Print_Values();
+			sleep(1);
 		}
-		sleep(1);
+		usleep_A9(100);
 	}
 }
 

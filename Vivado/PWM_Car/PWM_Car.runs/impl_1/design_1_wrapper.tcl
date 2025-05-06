@@ -111,7 +111,7 @@ set rc [catch {
   set_property webtalk.parent_dir C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.cache/wt [current_project]
   set_property parent.project_path C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.xpr [current_project]
   set_property ip_repo_paths {
-  c:/DevWorks/Robot_Car_PYNQ/Vivado/ip_repo/SpeedSensor_IP_1_0
+  C:/DevWorks/Robot_Car_PYNQ/Vivado/ip_repo/SpeedSensor_IP_1_0
   C:/DevWorks/Robot_Car_PYNQ/Vivado/ip_repo_HC_SR04/HC_SR04_IP_1_0
 } [current_project]
   update_ip_catalog

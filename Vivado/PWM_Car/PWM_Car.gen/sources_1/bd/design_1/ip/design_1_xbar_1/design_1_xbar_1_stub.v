@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-// Date        : Sun May  4 10:38:39 2025
+// Date        : Mon May  5 21:14:47 2025
 // Host        : 5CD322B2FW running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub
 //               c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ip/design_1_xbar_1/design_1_xbar_1_stub.v
@@ -22,7 +22,7 @@ module design_1_xbar_1(aclk, aresetn, s_axi_awaddr, s_axi_awprot,
   m_axi_awprot, m_axi_awvalid, m_axi_awready, m_axi_wdata, m_axi_wstrb, m_axi_wvalid, 
   m_axi_wready, m_axi_bresp, m_axi_bvalid, m_axi_bready, m_axi_araddr, m_axi_arprot, 
   m_axi_arvalid, m_axi_arready, m_axi_rdata, m_axi_rresp, m_axi_rvalid, m_axi_rready)
-/* synthesis syn_black_box black_box_pad_pin="aresetn,s_axi_awaddr[31:0],s_axi_awprot[2:0],s_axi_awvalid[0:0],s_axi_awready[0:0],s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wvalid[0:0],s_axi_wready[0:0],s_axi_bresp[1:0],s_axi_bvalid[0:0],s_axi_bready[0:0],s_axi_araddr[31:0],s_axi_arprot[2:0],s_axi_arvalid[0:0],s_axi_arready[0:0],s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rvalid[0:0],s_axi_rready[0:0],m_axi_awaddr[383:0],m_axi_awprot[35:0],m_axi_awvalid[11:0],m_axi_awready[11:0],m_axi_wdata[383:0],m_axi_wstrb[47:0],m_axi_wvalid[11:0],m_axi_wready[11:0],m_axi_bresp[23:0],m_axi_bvalid[11:0],m_axi_bready[11:0],m_axi_araddr[383:0],m_axi_arprot[35:0],m_axi_arvalid[11:0],m_axi_arready[11:0],m_axi_rdata[383:0],m_axi_rresp[23:0],m_axi_rvalid[11:0],m_axi_rready[11:0]" */
+/* synthesis syn_black_box black_box_pad_pin="aresetn,s_axi_awaddr[31:0],s_axi_awprot[2:0],s_axi_awvalid[0:0],s_axi_awready[0:0],s_axi_wdata[31:0],s_axi_wstrb[3:0],s_axi_wvalid[0:0],s_axi_wready[0:0],s_axi_bresp[1:0],s_axi_bvalid[0:0],s_axi_bready[0:0],s_axi_araddr[31:0],s_axi_arprot[2:0],s_axi_arvalid[0:0],s_axi_arready[0:0],s_axi_rdata[31:0],s_axi_rresp[1:0],s_axi_rvalid[0:0],s_axi_rready[0:0],m_axi_awaddr[415:0],m_axi_awprot[38:0],m_axi_awvalid[12:0],m_axi_awready[12:0],m_axi_wdata[415:0],m_axi_wstrb[51:0],m_axi_wvalid[12:0],m_axi_wready[12:0],m_axi_bresp[25:0],m_axi_bvalid[12:0],m_axi_bready[12:0],m_axi_araddr[415:0],m_axi_arprot[38:0],m_axi_arvalid[12:0],m_axi_arready[12:0],m_axi_rdata[415:0],m_axi_rresp[25:0],m_axi_rvalid[12:0],m_axi_rready[12:0]" */
 /* synthesis syn_force_seq_prim="aclk" */;
   input aclk /* synthesis syn_isclock = 1 */;
   input aresetn;
@@ -45,23 +45,23 @@ module design_1_xbar_1(aclk, aresetn, s_axi_awaddr, s_axi_awprot,
   output [1:0]s_axi_rresp;
   output [0:0]s_axi_rvalid;
   input [0:0]s_axi_rready;
-  output [383:0]m_axi_awaddr;
-  output [35:0]m_axi_awprot;
-  output [11:0]m_axi_awvalid;
-  input [11:0]m_axi_awready;
-  output [383:0]m_axi_wdata;
-  output [47:0]m_axi_wstrb;
-  output [11:0]m_axi_wvalid;
-  input [11:0]m_axi_wready;
-  input [23:0]m_axi_bresp;
-  input [11:0]m_axi_bvalid;
-  output [11:0]m_axi_bready;
-  output [383:0]m_axi_araddr;
-  output [35:0]m_axi_arprot;
-  output [11:0]m_axi_arvalid;
-  input [11:0]m_axi_arready;
-  input [383:0]m_axi_rdata;
-  input [23:0]m_axi_rresp;
-  input [11:0]m_axi_rvalid;
-  output [11:0]m_axi_rready;
+  output [415:0]m_axi_awaddr;
+  output [38:0]m_axi_awprot;
+  output [12:0]m_axi_awvalid;
+  input [12:0]m_axi_awready;
+  output [415:0]m_axi_wdata;
+  output [51:0]m_axi_wstrb;
+  output [12:0]m_axi_wvalid;
+  input [12:0]m_axi_wready;
+  input [25:0]m_axi_bresp;
+  input [12:0]m_axi_bvalid;
+  output [12:0]m_axi_bready;
+  output [415:0]m_axi_araddr;
+  output [38:0]m_axi_arprot;
+  output [12:0]m_axi_arvalid;
+  input [12:0]m_axi_arready;
+  input [415:0]m_axi_rdata;
+  input [25:0]m_axi_rresp;
+  input [12:0]m_axi_rvalid;
+  output [12:0]m_axi_rready;
 endmodule

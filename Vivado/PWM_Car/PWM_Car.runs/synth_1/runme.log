@@ -8,12 +8,12 @@
   **** SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
   **** IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
   **** SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-  **** Start of session at: Sun May  4 10:38:46 2025
+  **** Start of session at: Mon May  5 21:22:44 2025
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source design_1_wrapper.tcl -notrace
-create_project: Time (s): cpu = 00:00:06 ; elapsed = 00:00:06 . Memory (MB): peak = 487.793 ; gain = 202.266
+create_project: Time (s): cpu = 00:00:05 ; elapsed = 00:00:06 . Memory (MB): peak = 487.676 ; gain = 200.633
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/DevWorks/Robot_Car_PYNQ/Vivado/ip_repo/SpeedSensor_IP_1_0'.
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/DevWorks/Robot_Car_PYNQ/Vivado/ip_repo_HC_SR04/HC_SR04_IP_1_0'.
@@ -31,48 +31,50 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 17584
+INFO: [Synth 8-7075] Helper process launched with PID 11032
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1401.070 ; gain = 448.129
+Starting RTL Elaboration : Time (s): cpu = 00:00:04 ; elapsed = 00:00:04 . Memory (MB): peak = 1401.129 ; gain = 449.512
 ---------------------------------------------------------------------------------
-INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:63]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'IIC_0_0_scl_iobuf' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:184]
+INFO: [Synth 8-638] synthesizing module 'design_1_wrapper' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:64]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'IIC_0_0_scl_iobuf' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:186]
 INFO: [Synth 8-6157] synthesizing module 'IOBUF' [C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209]
 INFO: [Synth 8-6155] done synthesizing module 'IOBUF' (0#1) [C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'IIC_0_0_sda_iobuf' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:191]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'IIC_1_0_scl_iobuf' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:198]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'IIC_1_0_sda_iobuf' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:205]
-INFO: [Synth 8-3491] module 'design_1' declared at 'c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:3514' bound to instance 'design_1_i' of component 'design_1' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:212]
-INFO: [Synth 8-638] synthesizing module 'design_1' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:3578]
-INFO: [Synth 8-3491] module 'design_1_HC_SR04_IP_0_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_HC_SR04_IP_0_0_stub.vhdl:6' bound to instance 'HC_SR04_IP_0' of component 'design_1_HC_SR04_IP_0_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4453]
-INFO: [Synth 8-638] synthesizing module 'design_1_HC_SR04_IP_0_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_HC_SR04_IP_0_0_stub.vhdl:36]
-INFO: [Synth 8-3491] module 'design_1_HC_SR04_IP_1_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_HC_SR04_IP_1_0_stub.vhdl:6' bound to instance 'HC_SR04_IP_1' of component 'design_1_HC_SR04_IP_1_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4480]
-INFO: [Synth 8-638] synthesizing module 'design_1_HC_SR04_IP_1_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_HC_SR04_IP_1_0_stub.vhdl:36]
-INFO: [Synth 8-3491] module 'design_1_SpeedSensor_IP_0_4' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_SpeedSensor_IP_0_4_stub.vhdl:6' bound to instance 'SpeedSensor_IP_0' of component 'design_1_SpeedSensor_IP_0_4' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4507]
-INFO: [Synth 8-638] synthesizing module 'design_1_SpeedSensor_IP_0_4' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_SpeedSensor_IP_0_4_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'design_1_SpeedSensor_IP_1_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_SpeedSensor_IP_1_0_stub.vhdl:6' bound to instance 'SpeedSensor_IP_1' of component 'design_1_SpeedSensor_IP_1_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4536]
-INFO: [Synth 8-638] synthesizing module 'design_1_SpeedSensor_IP_1_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_SpeedSensor_IP_1_0_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'design_1_SpeedSensor_IP_2_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_SpeedSensor_IP_2_0_stub.vhdl:6' bound to instance 'SpeedSensor_IP_2' of component 'design_1_SpeedSensor_IP_2_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4565]
-INFO: [Synth 8-638] synthesizing module 'design_1_SpeedSensor_IP_2_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_SpeedSensor_IP_2_0_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'design_1_SpeedSensor_IP_3_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_SpeedSensor_IP_3_0_stub.vhdl:6' bound to instance 'SpeedSensor_IP_3' of component 'design_1_SpeedSensor_IP_3_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4594]
-INFO: [Synth 8-638] synthesizing module 'design_1_SpeedSensor_IP_3_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_SpeedSensor_IP_3_0_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'design_1_axi_timer_0_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_axi_timer_0_0_stub.vhdl:6' bound to instance 'axi_timer_0' of component 'design_1_axi_timer_0_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4623]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_timer_0_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_axi_timer_0_0_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'design_1_axi_timer_1_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_axi_timer_1_0_stub.vhdl:6' bound to instance 'axi_timer_1' of component 'design_1_axi_timer_1_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4652]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_timer_1_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_axi_timer_1_0_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'design_1_axi_timer_2_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_axi_timer_2_0_stub.vhdl:6' bound to instance 'axi_timer_2' of component 'design_1_axi_timer_2_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4681]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_timer_2_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_axi_timer_2_0_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'design_1_axi_timer_3_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_axi_timer_3_0_stub.vhdl:6' bound to instance 'axi_timer_3' of component 'design_1_axi_timer_3_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4710]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_timer_3_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_axi_timer_3_0_stub.vhdl:38]
-INFO: [Synth 8-3491] module 'design_1_clk_wiz_1' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_clk_wiz_1_stub.vhdl:6' bound to instance 'clk_wiz' of component 'design_1_clk_wiz_1' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4739]
-INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_1' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_clk_wiz_1_stub.vhdl:14]
-INFO: [Synth 8-3491] module 'design_1_axi_gpio_0_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_axi_gpio_0_0_stub.vhdl:6' bound to instance 'gpio_btns_sws' of component 'design_1_axi_gpio_0_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4744]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_axi_gpio_0_0_stub.vhdl:33]
-INFO: [Synth 8-3491] module 'design_1_axi_gpio_0_1' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_axi_gpio_0_1_stub.vhdl:6' bound to instance 'gpio_leds_rgb' of component 'design_1_axi_gpio_0_1' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4768]
-INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_1' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_axi_gpio_0_1_stub.vhdl:37]
-INFO: [Synth 8-3491] module 'design_1_processing_system7_0_1' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_processing_system7_0_1_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_1' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4796]
-INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_1' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_processing_system7_0_1_stub.vhdl:89]
-INFO: [Synth 8-638] synthesizing module 'design_1_ps7_0_axi_periph_1' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:1890]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'IIC_0_0_sda_iobuf' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:193]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'IIC_1_0_scl_iobuf' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:200]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'IIC_1_0_sda_iobuf' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:207]
+INFO: [Synth 8-3491] module 'design_1' declared at 'c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:3745' bound to instance 'design_1_i' of component 'design_1' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:214]
+INFO: [Synth 8-638] synthesizing module 'design_1' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:3810]
+INFO: [Synth 8-3491] module 'design_1_HC_SR04_IP_0_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_HC_SR04_IP_0_0_stub.vhdl:6' bound to instance 'HC_SR04_IP_0' of component 'design_1_HC_SR04_IP_0_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4732]
+INFO: [Synth 8-638] synthesizing module 'design_1_HC_SR04_IP_0_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_HC_SR04_IP_0_0_stub.vhdl:36]
+INFO: [Synth 8-3491] module 'design_1_HC_SR04_IP_1_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_HC_SR04_IP_1_0_stub.vhdl:6' bound to instance 'HC_SR04_IP_1' of component 'design_1_HC_SR04_IP_1_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4759]
+INFO: [Synth 8-638] synthesizing module 'design_1_HC_SR04_IP_1_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_HC_SR04_IP_1_0_stub.vhdl:36]
+INFO: [Synth 8-3491] module 'design_1_SpeedSensor_IP_0_4' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_SpeedSensor_IP_0_4_stub.vhdl:6' bound to instance 'SpeedSensor_IP_0' of component 'design_1_SpeedSensor_IP_0_4' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4786]
+INFO: [Synth 8-638] synthesizing module 'design_1_SpeedSensor_IP_0_4' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_SpeedSensor_IP_0_4_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'design_1_SpeedSensor_IP_1_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_SpeedSensor_IP_1_0_stub.vhdl:6' bound to instance 'SpeedSensor_IP_1' of component 'design_1_SpeedSensor_IP_1_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4815]
+INFO: [Synth 8-638] synthesizing module 'design_1_SpeedSensor_IP_1_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_SpeedSensor_IP_1_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'design_1_SpeedSensor_IP_2_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_SpeedSensor_IP_2_0_stub.vhdl:6' bound to instance 'SpeedSensor_IP_2' of component 'design_1_SpeedSensor_IP_2_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4844]
+INFO: [Synth 8-638] synthesizing module 'design_1_SpeedSensor_IP_2_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_SpeedSensor_IP_2_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'design_1_SpeedSensor_IP_3_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_SpeedSensor_IP_3_0_stub.vhdl:6' bound to instance 'SpeedSensor_IP_3' of component 'design_1_SpeedSensor_IP_3_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4873]
+INFO: [Synth 8-638] synthesizing module 'design_1_SpeedSensor_IP_3_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_SpeedSensor_IP_3_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'design_1_axi_timer_0_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_axi_timer_0_0_stub.vhdl:6' bound to instance 'axi_timer_0' of component 'design_1_axi_timer_0_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4902]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_timer_0_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_axi_timer_0_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'design_1_axi_timer_1_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_axi_timer_1_0_stub.vhdl:6' bound to instance 'axi_timer_1' of component 'design_1_axi_timer_1_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4931]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_timer_1_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_axi_timer_1_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'design_1_axi_timer_2_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_axi_timer_2_0_stub.vhdl:6' bound to instance 'axi_timer_2' of component 'design_1_axi_timer_2_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4960]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_timer_2_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_axi_timer_2_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'design_1_axi_timer_3_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_axi_timer_3_0_stub.vhdl:6' bound to instance 'axi_timer_3' of component 'design_1_axi_timer_3_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:4989]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_timer_3_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_axi_timer_3_0_stub.vhdl:38]
+INFO: [Synth 8-3491] module 'design_1_clk_wiz_1' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_clk_wiz_1_stub.vhdl:6' bound to instance 'clk_wiz' of component 'design_1_clk_wiz_1' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:5018]
+INFO: [Synth 8-638] synthesizing module 'design_1_clk_wiz_1' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_clk_wiz_1_stub.vhdl:14]
+INFO: [Synth 8-3491] module 'design_1_axi_gpio_0_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_axi_gpio_0_0_stub.vhdl:6' bound to instance 'gpio_btns_sws' of component 'design_1_axi_gpio_0_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:5023]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_axi_gpio_0_0_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'design_1_axi_gpio_0_2' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_axi_gpio_0_2_stub.vhdl:6' bound to instance 'gpio_intr_mpu' of component 'design_1_axi_gpio_0_2' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:5047]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_2' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_axi_gpio_0_2_stub.vhdl:33]
+INFO: [Synth 8-3491] module 'design_1_axi_gpio_0_1' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_axi_gpio_0_1_stub.vhdl:6' bound to instance 'gpio_leds_rgb' of component 'design_1_axi_gpio_0_1' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:5071]
+INFO: [Synth 8-638] synthesizing module 'design_1_axi_gpio_0_1' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_axi_gpio_0_1_stub.vhdl:37]
+INFO: [Synth 8-3491] module 'design_1_processing_system7_0_1' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_processing_system7_0_1_stub.vhdl:6' bound to instance 'processing_system7_0' of component 'design_1_processing_system7_0_1' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:5099]
+INFO: [Synth 8-638] synthesizing module 'design_1_processing_system7_0_1' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_processing_system7_0_1_stub.vhdl:90]
+INFO: [Synth 8-638] synthesizing module 'design_1_ps7_0_axi_periph_1' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:2010]
 INFO: [Synth 8-638] synthesizing module 'm00_couplers_imp_15SPJYW' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:58]
 INFO: [Synth 8-256] done synthesizing module 'm00_couplers_imp_15SPJYW' (0#1) [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:58]
 INFO: [Synth 8-638] synthesizing module 'm01_couplers_imp_XU9C55' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:159]
@@ -97,29 +99,35 @@ INFO: [Synth 8-638] synthesizing module 'm10_couplers_imp_I40Q9S' [c:/DevWorks/R
 INFO: [Synth 8-256] done synthesizing module 'm10_couplers_imp_I40Q9S' (0#1) [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:1112]
 INFO: [Synth 8-638] synthesizing module 'm11_couplers_imp_1CATNTT' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:1223]
 INFO: [Synth 8-256] done synthesizing module 'm11_couplers_imp_1CATNTT' (0#1) [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:1223]
-INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_UYSKKA' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:1353]
-INFO: [Synth 8-3491] module 'design_1_auto_pc_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_auto_pc_0_stub.vhdl:6' bound to instance 'auto_pc' of component 'design_1_auto_pc_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:1536]
-INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_auto_pc_0_stub.vhdl:71]
-INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_UYSKKA' (0#1) [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:1353]
-INFO: [Synth 8-3491] module 'design_1_xbar_1' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_xbar_1_stub.vhdl:6' bound to instance 'xbar' of component 'design_1_xbar_1' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:3265]
-INFO: [Synth 8-638] synthesizing module 'design_1_xbar_1' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_xbar_1_stub.vhdl:52]
-INFO: [Synth 8-256] done synthesizing module 'design_1_ps7_0_axi_periph_1' (0#1) [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:1890]
-INFO: [Synth 8-3491] module 'design_1_rst_ps7_0_100M_1' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_rst_ps7_0_100M_1_stub.vhdl:6' bound to instance 'rst_ps7_0_100M' of component 'design_1_rst_ps7_0_100M_1' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:5161]
-INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps7_0_100M_1' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-4560-5CD322B2FW/realtime/design_1_rst_ps7_0_100M_1_stub.vhdl:22]
-INFO: [Synth 8-256] done synthesizing module 'design_1' (0#1) [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:3578]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'leds_4bits_tri_iobuf_0' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:294]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'leds_4bits_tri_iobuf_1' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:301]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'leds_4bits_tri_iobuf_2' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:308]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'leds_4bits_tri_iobuf_3' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:315]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'rgb_led_tri_iobuf_0' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:322]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'rgb_led_tri_iobuf_1' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:329]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'rgb_led_tri_iobuf_2' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:336]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'rgb_led_tri_iobuf_3' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:343]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'rgb_led_tri_iobuf_4' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:350]
-INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'rgb_led_tri_iobuf_5' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:357]
-INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (0#1) [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:63]
+INFO: [Synth 8-638] synthesizing module 'm12_couplers_imp_J0YUF7' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:1330]
+INFO: [Synth 8-256] done synthesizing module 'm12_couplers_imp_J0YUF7' (0#1) [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:1330]
+INFO: [Synth 8-638] synthesizing module 's00_couplers_imp_UYSKKA' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:1454]
+INFO: [Synth 8-3491] module 'design_1_auto_pc_0' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_auto_pc_0_stub.vhdl:6' bound to instance 'auto_pc' of component 'design_1_auto_pc_0' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:1637]
+INFO: [Synth 8-638] synthesizing module 'design_1_auto_pc_0' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_auto_pc_0_stub.vhdl:71]
+INFO: [Synth 8-256] done synthesizing module 's00_couplers_imp_UYSKKA' (0#1) [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:1454]
+INFO: [Synth 8-3491] module 'design_1_xbar_1' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_xbar_1_stub.vhdl:6' bound to instance 'xbar' of component 'design_1_xbar_1' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:3477]
+INFO: [Synth 8-638] synthesizing module 'design_1_xbar_1' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_xbar_1_stub.vhdl:52]
+INFO: [Synth 8-256] done synthesizing module 'design_1_ps7_0_axi_periph_1' (0#1) [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:2010]
+INFO: [Synth 8-3491] module 'design_1_rst_ps7_0_100M_1' declared at 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_rst_ps7_0_100M_1_stub.vhdl:6' bound to instance 'rst_ps7_0_100M' of component 'design_1_rst_ps7_0_100M_1' [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:5484]
+INFO: [Synth 8-638] synthesizing module 'design_1_rst_ps7_0_100M_1' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/.Xil/Vivado-18236-5CD322B2FW/realtime/design_1_rst_ps7_0_100M_1_stub.vhdl:22]
+INFO: [Synth 8-256] done synthesizing module 'design_1' (0#1) [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/synth/design_1.vhd:3810]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'leds_4bits_tri_iobuf_0' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:297]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'leds_4bits_tri_iobuf_1' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:304]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'leds_4bits_tri_iobuf_2' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:311]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'leds_4bits_tri_iobuf_3' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:318]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'rgb_led_tri_iobuf_0' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:325]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'rgb_led_tri_iobuf_1' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:332]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'rgb_led_tri_iobuf_2' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:339]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'rgb_led_tri_iobuf_3' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:346]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'rgb_led_tri_iobuf_4' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:353]
+INFO: [Synth 8-3491] module 'IOBUF' declared at 'C:/Xilinx/Vivado/2024.1/scripts/rt/data/unisim_comp.v:78209' bound to instance 'rgb_led_tri_iobuf_5' of component 'IOBUF' [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:360]
+INFO: [Synth 8-256] done synthesizing module 'design_1_wrapper' (0#1) [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/hdl/design_1_wrapper.vhd:64]
 WARNING: [Synth 8-7129] Port M_ACLK in module s00_couplers_imp_UYSKKA is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M_ARESETN in module s00_couplers_imp_UYSKKA is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ACLK in module m12_couplers_imp_J0YUF7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M_ARESETN in module m12_couplers_imp_J0YUF7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ACLK in module m12_couplers_imp_J0YUF7 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port S_ARESETN in module m12_couplers_imp_J0YUF7 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M_ACLK in module m11_couplers_imp_1CATNTT is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M_ARESETN in module m11_couplers_imp_1CATNTT is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S_ACLK in module m11_couplers_imp_1CATNTT is either unconnected or has no load
@@ -192,21 +200,23 @@ WARNING: [Synth 8-7129] Port M10_ACLK in module design_1_ps7_0_axi_periph_1 is e
 WARNING: [Synth 8-7129] Port M10_ARESETN in module design_1_ps7_0_axi_periph_1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M11_ACLK in module design_1_ps7_0_axi_periph_1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M11_ARESETN in module design_1_ps7_0_axi_periph_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M12_ACLK in module design_1_ps7_0_axi_periph_1 is either unconnected or has no load
+WARNING: [Synth 8-7129] Port M12_ARESETN in module design_1_ps7_0_axi_periph_1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S00_ACLK in module design_1_ps7_0_axi_periph_1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port S00_ARESETN in module design_1_ps7_0_axi_periph_1 is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1531.281 ; gain = 578.340
+Finished RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1532.090 ; gain = 580.473
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1531.281 ; gain = 578.340
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1532.090 ; gain = 580.473
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1531.281 ; gain = 578.340
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1532.090 ; gain = 580.473
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1531.281 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.034 . Memory (MB): peak = 1532.090 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -247,6 +257,8 @@ Parsing XDC File [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_
 Finished Parsing XDC File [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ip/design_1_HC_SR04_IP_0_0/design_1_HC_SR04_IP_0_0/design_1_HC_SR04_IP_0_0_in_context.xdc] for cell 'design_1_i/HC_SR04_IP_0'
 Parsing XDC File [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ip/design_1_HC_SR04_IP_1_0/design_1_HC_SR04_IP_1_0/design_1_HC_SR04_IP_0_0_in_context.xdc] for cell 'design_1_i/HC_SR04_IP_1'
 Finished Parsing XDC File [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ip/design_1_HC_SR04_IP_1_0/design_1_HC_SR04_IP_1_0/design_1_HC_SR04_IP_0_0_in_context.xdc] for cell 'design_1_i/HC_SR04_IP_1'
+Parsing XDC File [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_2/design_1_axi_gpio_0_2/design_1_axi_gpio_0_2_in_context.xdc] for cell 'design_1_i/gpio_intr_mpu'
+Finished Parsing XDC File [c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_2/design_1_axi_gpio_0_2/design_1_axi_gpio_0_2_in_context.xdc] for cell 'design_1_i/gpio_intr_mpu'
 Parsing XDC File [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.srcs/constrs_1/new/save.xdc]
 Finished Parsing XDC File [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.srcs/constrs_1/new/save.xdc]
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.srcs/constrs_1/new/save.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/design_1_wrapper_propImpl.xdc].
@@ -255,23 +267,23 @@ Parsing XDC File [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1
 Finished Parsing XDC File [C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/dont_touch.xdc]
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1631.238 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1624.824 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 14 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 14 instances
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1631.238 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1624.824 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1631.238 ; gain = 678.297
+Finished Constraint Validation : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1624.824 ; gain = 673.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7z020clg400-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:15 . Memory (MB): peak = 1631.238 ; gain = 678.297
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1624.824 ; gain = 673.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
@@ -557,11 +569,12 @@ Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/gpio_btns_sws. (constr
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/gpio_leds_rgb. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/HC_SR04_IP_0. (constraint file  auto generated constraint).
 Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/HC_SR04_IP_1. (constraint file  auto generated constraint).
+Applied set_property KEEP_HIERARCHY = SOFT for design_1_i/gpio_intr_mpu. (constraint file  auto generated constraint).
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1631.238 ; gain = 678.297
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1624.824 ; gain = 673.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1631.238 ; gain = 678.297
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:13 ; elapsed = 00:00:14 . Memory (MB): peak = 1624.824 ; gain = 673.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -601,33 +614,27 @@ WARNING: [Synth 8-7129] Port M07_ACLK in module design_1_ps7_0_axi_periph_1 is e
 WARNING: [Synth 8-7129] Port M07_ARESETN in module design_1_ps7_0_axi_periph_1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M08_ACLK in module design_1_ps7_0_axi_periph_1 is either unconnected or has no load
 WARNING: [Synth 8-7129] Port M08_ARESETN in module design_1_ps7_0_axi_periph_1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port M09_ACLK in module design_1_ps7_0_axi_periph_1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port M09_ARESETN in module design_1_ps7_0_axi_periph_1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port M10_ACLK in module design_1_ps7_0_axi_periph_1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port M10_ARESETN in module design_1_ps7_0_axi_periph_1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port M11_ACLK in module design_1_ps7_0_axi_periph_1 is either unconnected or has no load
-WARNING: [Synth 8-7129] Port M11_ARESETN in module design_1_ps7_0_axi_periph_1 is either unconnected or has no load
 INFO: [Common 17-14] Message 'Synth 8-7129' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:16 ; elapsed = 00:00:17 . Memory (MB): peak = 1631.238 ; gain = 678.297
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1624.824 ; gain = 673.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1631.238 ; gain = 678.297
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1624.824 ; gain = 673.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1631.238 ; gain = 678.297
+Finished Timing Optimization : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1624.824 ; gain = 673.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1631.238 ; gain = 678.297
+Finished Technology Mapping : Time (s): cpu = 00:00:19 ; elapsed = 00:00:21 . Memory (MB): peak = 1624.824 ; gain = 673.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -645,37 +652,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1631.238 ; gain = 678.297
+Finished IO Insertion : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1624.824 ; gain = 673.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1631.238 ; gain = 678.297
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1624.824 ; gain = 673.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1631.238 ; gain = 678.297
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1624.824 ; gain = 673.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1631.238 ; gain = 678.297
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1624.824 ; gain = 673.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1631.238 ; gain = 678.297
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1624.824 ; gain = 673.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1631.238 ; gain = 678.297
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1624.824 ; gain = 673.207
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -699,9 +706,10 @@ Report BlackBoxes:
 |12    |design_1_axi_timer_3_0          |         1|
 |13    |design_1_clk_wiz_1              |         1|
 |14    |design_1_axi_gpio_0_0           |         1|
-|15    |design_1_axi_gpio_0_1           |         1|
-|16    |design_1_processing_system7_0_1 |         1|
-|17    |design_1_rst_ps7_0_100M_1       |         1|
+|15    |design_1_axi_gpio_0_2           |         1|
+|16    |design_1_axi_gpio_0_1           |         1|
+|17    |design_1_processing_system7_0_1 |         1|
+|18    |design_1_rst_ps7_0_100M_1       |         1|
 +------+--------------------------------+----------+
 
 Report Cell Usage: 
@@ -717,41 +725,42 @@ Report Cell Usage:
 |7     |design_1_auto_pc_0_bbox              |     1|
 |8     |design_1_axi_gpio_0_0_bbox           |     1|
 |9     |design_1_axi_gpio_0_1_bbox           |     1|
-|10    |design_1_axi_timer_0_0_bbox          |     1|
-|11    |design_1_axi_timer_1_0_bbox          |     1|
-|12    |design_1_axi_timer_2_0_bbox          |     1|
-|13    |design_1_axi_timer_3_0_bbox          |     1|
-|14    |design_1_clk_wiz_1_bbox              |     1|
-|15    |design_1_processing_system7_0_1_bbox |     1|
-|16    |design_1_rst_ps7_0_100M_1_bbox       |     1|
-|17    |design_1_xbar_1_bbox                 |     1|
-|18    |IBUF                                 |    13|
-|19    |IOBUF                                |    14|
-|20    |OBUF                                 |     6|
+|10    |design_1_axi_gpio_0_2_bbox           |     1|
+|11    |design_1_axi_timer_0_0_bbox          |     1|
+|12    |design_1_axi_timer_1_0_bbox          |     1|
+|13    |design_1_axi_timer_2_0_bbox          |     1|
+|14    |design_1_axi_timer_3_0_bbox          |     1|
+|15    |design_1_clk_wiz_1_bbox              |     1|
+|16    |design_1_processing_system7_0_1_bbox |     1|
+|17    |design_1_rst_ps7_0_100M_1_bbox       |     1|
+|18    |design_1_xbar_1_bbox                 |     1|
+|19    |IBUF                                 |    13|
+|20    |IOBUF                                |    14|
+|21    |OBUF                                 |     7|
 +------+-------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1631.238 ; gain = 678.297
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1624.824 ; gain = 673.207
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 27 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:17 ; elapsed = 00:00:24 . Memory (MB): peak = 1631.238 ; gain = 578.340
-Synthesis Optimization Complete : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1631.238 ; gain = 678.297
+Synthesis finished with 0 errors, 0 critical warnings and 29 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:15 ; elapsed = 00:00:22 . Memory (MB): peak = 1624.824 ; gain = 580.473
+Synthesis Optimization Complete : Time (s): cpu = 00:00:23 ; elapsed = 00:00:25 . Memory (MB): peak = 1624.824 ; gain = 673.207
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1631.238 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.018 . Memory (MB): peak = 1624.824 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 14 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1631.238 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1624.824 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 14 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 14 instances
 
-Synth Design complete | Checksum: b429ddf7
+Synth Design complete | Checksum: d064f0d5
 INFO: [Common 17-83] Releasing license: Synthesis
-112 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
+116 Infos, 101 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:29 ; elapsed = 00:00:31 . Memory (MB): peak = 1631.238 ; gain = 1110.648
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1631.238 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:28 ; elapsed = 00:00:30 . Memory (MB): peak = 1624.824 ; gain = 1104.395
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1624.824 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/design_1_wrapper.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file design_1_wrapper_utilization_synth.rpt -pb design_1_wrapper_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun May  4 10:39:28 2025...
+INFO: [Common 17-206] Exiting Vivado at Mon May  5 21:23:23 2025...

@@ -1,0 +1,287 @@
+#ifndef FUNCTIONS_H
+#define FUNCTIONS_H
+
+#include "Globals.h"
+
+void		GPIO_Initialize		(void);
+void 		PWM_Initialize		(void);
+void 		MPU_Initialize		(void);
+void		PWM_Set				(void);
+void		HCSR04_Read			(void);
+void		Speed_Read			(void);
+void		MPU_Read			(void);
+void 		Print_Values		(void);
+void 		Check_Status		(int status,char* status_msg);
+void 		Main_Loop			(void);
+
+
+void GPIO_Initialize(void)
+{
+	int Status;
+
+	// Initialize
+	Status = XGpio_Initialize(&gpio_in, GPIO_BTN_SWS_ID);
+	Check_Status(Status, "MPU_Initialize -> btns");
+
+	Status = XGpio_Initialize(&gpio_out, GPIO_LEDS_RGB_ID);
+	Check_Status(Status, "MPU_Initialize -> leds");
+
+	// Set Direction
+	XGpio_SetDataDirection(&gpio_in, BTNS_CHANNEL, 1);
+	XGpio_SetDataDirection(&gpio_in, SWS_CHANNEL, 1);
+	XGpio_SetDataDirection(&gpio_out, RGB_CHANNEL, 0);
+	XGpio_SetDataDirection(&gpio_out, LEDS_CHANNEL, 0);
+
+	XGpio_DiscreteWrite(&gpio_out, LEDS_CHANNEL, 0x00);
+}
+
+
+void PWM_Initialize(void)
+{
+	// Initialize Timers
+	XTmrCtr_Initialize(&TimerCounterInst_1, AXI_TIMER_ID_1);
+	XTmrCtr_Initialize(&TimerCounterInst_2, AXI_TIMER_ID_2);
+	XTmrCtr_Initialize(&TimerCounterInst_3, AXI_TIMER_ID_3);
+	XTmrCtr_Initialize(&TimerCounterInst_4, AXI_TIMER_ID_4);
+
+	// Disable PWM for reconfiguration
+	XTmrCtr_PwmDisable(&TimerCounterInst_1);
+	XTmrCtr_PwmDisable(&TimerCounterInst_2);
+	XTmrCtr_PwmDisable(&TimerCounterInst_3);
+	XTmrCtr_PwmDisable(&TimerCounterInst_4);
+
+	// Set hightime
+	highTime = PWM_PERIOD / DUTYCYCLE_DIVISOR;
+	XGpio_DiscreteWrite(&gpio_out, LEDS_CHANNEL, 0b1000);
+
+	// Configure PWM
+	XTmrCtr_PwmConfigure(&TimerCounterInst_1, PWM_PERIOD, highTime);
+	XTmrCtr_PwmConfigure(&TimerCounterInst_2, PWM_PERIOD, highTime);
+	XTmrCtr_PwmConfigure(&TimerCounterInst_3, PWM_PERIOD, highTime);
+	XTmrCtr_PwmConfigure(&TimerCounterInst_4, PWM_PERIOD, highTime);
+
+	// Enable PWM after reconfiguration
+	XTmrCtr_PwmEnable(&TimerCounterInst_1);
+	XTmrCtr_PwmEnable(&TimerCounterInst_2);
+	XTmrCtr_PwmEnable(&TimerCounterInst_3);
+	XTmrCtr_PwmEnable(&TimerCounterInst_4);
+
+	printf("Duty cycle set : %.1f%%\n\r",((float)highTime/(float)PWM_PERIOD)*100);
+}
+
+
+void MPU_Initialize(void)
+{
+	int Status;
+	XIicPs_Config *Config;
+
+	Config = XIicPs_LookupConfig(IIC_DEVICE_ID);
+
+	Status = XIicPs_CfgInitialize(&Iic, Config, Config->BaseAddress);
+	Check_Status(Status, "MPU_Initialize -> XIicPs_CfgInitialize");
+
+	XIicPs_SetSClk(&Iic, IIC_SCLK_RATE);
+
+	Status = XIicPs_MasterSendPolled(&Iic, MPU_wake_up_data, 2, IIC_SLAVE_ADDR);
+	Check_Status(Status, "MPU_Initialize -> XIicPs_MasterSendPolled");
+
+	while (XIicPs_BusIsBusy(&Iic));
+	usleep(1000);
+}
+
+
+void PWM_Set(void)
+{
+	// Disable PWM for reconfiguration
+	XTmrCtr_PwmDisable(&TimerCounterInst_1);
+	XTmrCtr_PwmDisable(&TimerCounterInst_2);
+	XTmrCtr_PwmDisable(&TimerCounterInst_3);
+	XTmrCtr_PwmDisable(&TimerCounterInst_4);
+
+	// Set hightime
+	rv = XGpio_DiscreteRead(&gpio_in, BTNS_CHANNEL);
+	switch(rv)
+	{
+		case 1:
+			XGpio_DiscreteWrite(&gpio_out, LEDS_CHANNEL, rv);
+			highTime = PWM_PERIOD * 0.9;
+			break;
+		case 2:
+			XGpio_DiscreteWrite(&gpio_out, LEDS_CHANNEL, rv);
+			highTime = PWM_PERIOD * 0.8;
+			break;
+		case 4:
+			XGpio_DiscreteWrite(&gpio_out, LEDS_CHANNEL, rv);
+			highTime = PWM_PERIOD * 0.7;
+			break;
+		case 8:
+			XGpio_DiscreteWrite(&gpio_out, LEDS_CHANNEL, rv);
+			highTime = PWM_PERIOD * 0.5;
+			break;
+		default:
+			highTime = highTime;
+			break;
+	}
+	// Configure PWM
+	XTmrCtr_PwmConfigure(&TimerCounterInst_1, PWM_PERIOD, highTime);
+	XTmrCtr_PwmConfigure(&TimerCounterInst_2, PWM_PERIOD, highTime);
+	XTmrCtr_PwmConfigure(&TimerCounterInst_3, PWM_PERIOD, highTime);
+	XTmrCtr_PwmConfigure(&TimerCounterInst_4, PWM_PERIOD, highTime);
+
+	// Enable PWM after reconfiguration
+	XTmrCtr_PwmEnable(&TimerCounterInst_1);
+	XTmrCtr_PwmEnable(&TimerCounterInst_2);
+	XTmrCtr_PwmEnable(&TimerCounterInst_3);
+	XTmrCtr_PwmEnable(&TimerCounterInst_4);
+}
+
+
+void HCSR04_Read(void)
+{
+	ultra_data.right = HC_SR04_IP_mReadReg(XPAR_HC_SR04_IP_0_S00_AXI_BASEADDR,HC_SR04_IP_S00_AXI_SLV_REG2_OFFSET);
+	ultra_data.left = HC_SR04_IP_mReadReg(XPAR_HC_SR04_IP_1_S00_AXI_BASEADDR,HC_SR04_IP_S00_AXI_SLV_REG2_OFFSET);
+
+	if(ultra_data.right < 10)
+	{
+		XGpio_DiscreteWrite(&gpio_out, RGB_CHANNEL, (XGpio_DiscreteRead(&gpio_out, RGB_CHANNEL) & 0b000111) | 0b100000);
+		XTmrCtr_PwmDisable(&TimerCounterInst_2);
+		XTmrCtr_PwmDisable(&TimerCounterInst_3);
+	}
+	else if(ultra_data.right < 20)
+	{
+		XGpio_DiscreteWrite(&gpio_out, RGB_CHANNEL, (XGpio_DiscreteRead(&gpio_out, RGB_CHANNEL) & 0b000111) | 0b011000);
+		XTmrCtr_PwmDisable(&TimerCounterInst_2);
+		XTmrCtr_PwmDisable(&TimerCounterInst_3);
+	}
+	else
+	{
+		XGpio_DiscreteWrite(&gpio_out, RGB_CHANNEL, (XGpio_DiscreteRead(&gpio_out, RGB_CHANNEL) & 0b000111) | 0b010000);
+		XTmrCtr_PwmEnable(&TimerCounterInst_2);
+		XTmrCtr_PwmEnable(&TimerCounterInst_3);
+	}
+
+	if(ultra_data.left < 10)
+	{
+		XGpio_DiscreteWrite(&gpio_out, RGB_CHANNEL, (XGpio_DiscreteRead(&gpio_out, RGB_CHANNEL) & 0b111000) | 0b000100);
+		XTmrCtr_PwmDisable(&TimerCounterInst_1);
+		XTmrCtr_PwmDisable(&TimerCounterInst_4);
+	}
+	else if(ultra_data.left < 20)
+	{
+		XGpio_DiscreteWrite(&gpio_out, RGB_CHANNEL, (XGpio_DiscreteRead(&gpio_out, RGB_CHANNEL) & 0b111000) | 0b000011);
+		XTmrCtr_PwmDisable(&TimerCounterInst_1);
+		XTmrCtr_PwmDisable(&TimerCounterInst_4);
+	}
+	else
+	{
+		XGpio_DiscreteWrite(&gpio_out, RGB_CHANNEL, (XGpio_DiscreteRead(&gpio_out, RGB_CHANNEL) & 0b111000) | 0b000010);
+		XTmrCtr_PwmEnable(&TimerCounterInst_1);
+		XTmrCtr_PwmEnable(&TimerCounterInst_4);
+	}
+}
+
+
+void Speed_Read(void)
+{
+	// Read Speed sensor data.
+	speed_data_1.distance = SPEEDSENSOR_IP_mReadReg(XPAR_SPEEDSENSOR_IP_0_S00_AXI_BASEADDR,0);
+	speed_data_2.distance = SPEEDSENSOR_IP_mReadReg(XPAR_SPEEDSENSOR_IP_1_S00_AXI_BASEADDR,0);
+	speed_data_1.speed = SPEEDSENSOR_IP_mReadReg(XPAR_SPEEDSENSOR_IP_0_S00_AXI_BASEADDR,4);
+	speed_data_2.speed = SPEEDSENSOR_IP_mReadReg(XPAR_SPEEDSENSOR_IP_1_S00_AXI_BASEADDR,4);
+}
+
+
+void MPU_Read(void)
+{
+	int Status;
+	// Write to ACCEL_XOUT_H to start reading.
+	Status = XIicPs_MasterSendPolled(&Iic, MPU_read_accx, 1, IIC_SLAVE_ADDR);
+	//Check_Status(Status,"Main_Loop -> MasterSendPolled");
+
+	// Wait while IIC is busy.
+	while (XIicPs_BusIsBusy(&Iic));
+
+	// Read MPU data.
+	Status = XIicPs_MasterRecvPolled(&Iic, MPU_buffer, 14, IIC_SLAVE_ADDR);
+	//Check_Status(Status,"Main_Loop -> MasterRecvPolled");
+
+	// Parse mpu data.
+	mpu_data.acc_x = ((MPU_buffer[0] << 8) | MPU_buffer[1]) - ACC_X_CORRECTION;
+	mpu_data.acc_y = ((MPU_buffer[2] << 8) | MPU_buffer[3]) - ACC_Y_CORRECTION;
+	mpu_data.acc_z = ((MPU_buffer[4] << 8) | MPU_buffer[5]) - ACC_Z_CORRECTION;
+
+	// Temperature in degrees C = (TEMP_OUT Register Value as a signed quantity)/340 + 36.53
+	mpu_data.temp  = (((MPU_buffer[6] << 8) | MPU_buffer[7]) / 340) + 36.53;
+
+	mpu_data.gy_x  = ((MPU_buffer[8] << 8) | MPU_buffer[9]) + GYR_X_CORRECTION;
+	mpu_data.gy_y  = ((MPU_buffer[10] << 8) | MPU_buffer[11]) + GYR_Y_CORRECTION;
+	mpu_data.gy_z  = ((MPU_buffer[12] << 8)| MPU_buffer[13]) - GYR_Z_CORRECTION;
+}
+
+
+void Print_Values(void)
+{
+	printf("--------------------------------------------------\n\r");
+	printf("PWM Duty Cycle : %.1f%%\n\r",((float)highTime/(float)PWM_PERIOD)*100);
+	printf("Accelerometer Data : \n\r");
+	printf("		X = %d \n\r", mpu_data.acc_x);
+	printf("		Y = %d \n\r", mpu_data.acc_y);
+	printf("		Z = %d \n\r", mpu_data.acc_z);
+
+	printf("Temperature Data : \n\r");
+	printf("		X = %d °C\n\r", mpu_data.temp);
+
+	printf("Gyroscope Data : \n\r");
+	printf("		X = %d \n\r", mpu_data.gy_x);
+	printf("		Y = %d \n\r", mpu_data.gy_y);
+	printf("		Z = %d \n\r", mpu_data.gy_z);
+
+	printf("Speed Sensor Data : \n\r");
+	printf("		Distance 1  = %ld \n\r", speed_data_1.distance);
+	printf("		Distance 2  = %ld \n\r", speed_data_2.distance);
+	printf("		Speed 1     = %ld \n\r", speed_data_1.speed);
+	printf("		Speed 2     = %ld \n\r", speed_data_2.speed);
+
+	printf("Ultrasonic Sensor Data : \n\r");
+	printf("		Right = %ld \n\r",ultra_data.right);
+	printf("		Left  = %ld \n\r",ultra_data.left);
+	printf("--------------------------------------------------\n\r");
+}
+
+
+void Check_Status(int status, char* status_msg)
+{
+	if (status != XST_SUCCESS)
+	{
+	    xil_printf("Status Check Failed!\n\r");
+	    xil_printf("Error at %s\n\r",status_msg);
+	    xil_printf("Status : %d \n\r",status);
+	}
+}
+
+
+void Main_Loop(void)
+{
+	while(1)
+	{
+		if(XGpio_DiscreteRead(&gpio_in, SWS_CHANNEL) & 0x02)
+		{
+			PWM_Set();
+			sleep(1);
+		}
+
+		HCSR04_Read();
+		Speed_Read();
+		MPU_Read();
+
+		if(XGpio_DiscreteRead(&gpio_in, SWS_CHANNEL) & 0x01)
+		{
+			Print_Values();
+			sleep(1);
+		}
+		usleep_A9(100);
+	}
+}
+
+
+#endif

@@ -2,7 +2,7 @@
 --Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ----------------------------------------------------------------------------------
 --Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
---Date        : Sun May  4 10:37:22 2025
+--Date        : Mon May  5 21:13:20 2025
 --Host        : 5CD322B2FW running 64-bit major release  (build 9200)
 --Command     : generate_target design_1_wrapper.bd
 --Design      : design_1_wrapper
@@ -35,6 +35,7 @@ entity design_1_wrapper is
     FIXED_IO_ps_clk : inout STD_LOGIC;
     FIXED_IO_ps_porb : inout STD_LOGIC;
     FIXED_IO_ps_srstb : inout STD_LOGIC;
+    GPIO_0_tri_o : out STD_LOGIC_VECTOR ( 0 to 0 );
     IIC_0_0_scl_io : inout STD_LOGIC;
     IIC_0_0_sda_io : inout STD_LOGIC;
     IIC_1_0_scl_io : inout STD_LOGIC;
@@ -104,6 +105,7 @@ architecture STRUCTURE of design_1_wrapper is
     rgb_led_tri_i : in STD_LOGIC_VECTOR ( 5 downto 0 );
     rgb_led_tri_o : out STD_LOGIC_VECTOR ( 5 downto 0 );
     rgb_led_tri_t : out STD_LOGIC_VECTOR ( 5 downto 0 );
+    GPIO_0_tri_o : out STD_LOGIC_VECTOR ( 0 to 0 );
     pwm0_0 : out STD_LOGIC;
     pwm0_1 : out STD_LOGIC;
     pwm0_2 : out STD_LOGIC;
@@ -232,6 +234,7 @@ design_1_i: component design_1
       FIXED_IO_ps_clk => FIXED_IO_ps_clk,
       FIXED_IO_ps_porb => FIXED_IO_ps_porb,
       FIXED_IO_ps_srstb => FIXED_IO_ps_srstb,
+      GPIO_0_tri_o(0) => GPIO_0_tri_o(0),
       IIC_0_0_scl_i => IIC_0_0_scl_i,
       IIC_0_0_scl_o => IIC_0_0_scl_o,
       IIC_0_0_scl_t => IIC_0_0_scl_t,

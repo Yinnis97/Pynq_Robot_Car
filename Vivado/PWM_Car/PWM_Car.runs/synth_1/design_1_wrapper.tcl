@@ -102,6 +102,9 @@ set_property used_in_implementation false [get_files -all c:/DevWorks/Robot_Car_
 set_property used_in_implementation false [get_files -all c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_board.xdc]
 set_property used_in_implementation false [get_files -all c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_1/design_1_axi_gpio_0_1.xdc]
+set_property used_in_implementation false [get_files -all c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_2/design_1_axi_gpio_0_2_board.xdc]
+set_property used_in_implementation false [get_files -all c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_2/design_1_axi_gpio_0_2_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ip/design_1_axi_gpio_0_2/design_1_axi_gpio_0_2.xdc]
 set_property used_in_implementation false [get_files -all c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/ip/design_1_auto_pc_0/design_1_auto_pc_0_ooc.xdc]
 set_property used_in_implementation false [get_files -all c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.gen/sources_1/bd/design_1/design_1_ooc.xdc]
 

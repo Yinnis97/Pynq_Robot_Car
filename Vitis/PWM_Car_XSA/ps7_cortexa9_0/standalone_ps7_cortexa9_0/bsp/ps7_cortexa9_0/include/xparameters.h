@@ -306,7 +306,7 @@
 /******************************************************************/
 
 /* Definitions for driver GPIO */
-#define XPAR_XGPIO_NUM_INSTANCES 2
+#define XPAR_XGPIO_NUM_INSTANCES 3
 
 /* Definitions for peripheral GPIO_BTNS_SWS */
 #define XPAR_GPIO_BTNS_SWS_BASEADDR 0x41200000
@@ -324,6 +324,14 @@
 #define XPAR_GPIO_LEDS_RGB_IS_DUAL 1
 
 
+/* Definitions for peripheral GPIO_INTR_MPU */
+#define XPAR_GPIO_INTR_MPU_BASEADDR 0x41220000
+#define XPAR_GPIO_INTR_MPU_HIGHADDR 0x4122FFFF
+#define XPAR_GPIO_INTR_MPU_DEVICE_ID 2
+#define XPAR_GPIO_INTR_MPU_INTERRUPT_PRESENT 1
+#define XPAR_GPIO_INTR_MPU_IS_DUAL 0
+
+
 /******************************************************************/
 
 /* Canonical definitions for peripheral GPIO_BTNS_SWS */
@@ -339,6 +347,13 @@
 #define XPAR_GPIO_1_DEVICE_ID XPAR_GPIO_LEDS_RGB_DEVICE_ID
 #define XPAR_GPIO_1_INTERRUPT_PRESENT 0
 #define XPAR_GPIO_1_IS_DUAL 1
+
+/* Canonical definitions for peripheral GPIO_INTR_MPU */
+#define XPAR_GPIO_2_BASEADDR 0x41220000
+#define XPAR_GPIO_2_HIGHADDR 0x4122FFFF
+#define XPAR_GPIO_2_DEVICE_ID XPAR_GPIO_INTR_MPU_DEVICE_ID
+#define XPAR_GPIO_2_INTERRUPT_PRESENT 1
+#define XPAR_GPIO_2_IS_DUAL 0
 
 
 /******************************************************************/
@@ -420,6 +435,16 @@
 #define XPAR_XQSPIPS_0_QSPI_MODE 0
 #define XPAR_XQSPIPS_0_QSPI_BUS_WIDTH 2
 
+
+/******************************************************************/
+
+/* Definitions for Fabric interrupts connected to ps7_scugic_0 */
+#define XPAR_FABRIC_GPIO_INTR_MPU_IP2INTC_IRPT_INTR 61U
+
+/******************************************************************/
+
+/* Canonical definitions for Fabric interrupts connected to ps7_scugic_0 */
+#define XPAR_FABRIC_GPIO_2_VEC_ID XPAR_FABRIC_GPIO_INTR_MPU_IP2INTC_IRPT_INTR
 
 /******************************************************************/
 
@@ -538,28 +563,28 @@
 #define XPAR_AXI_TIMER_0_DEVICE_ID 0U
 #define XPAR_AXI_TIMER_0_BASEADDR 0x42800000U
 #define XPAR_AXI_TIMER_0_HIGHADDR 0x4280FFFFU
-#define XPAR_AXI_TIMER_0_CLOCK_FREQ_HZ  100000000U
+#define XPAR_AXI_TIMER_0_CLOCK_FREQ_HZ 100000000U
 
 
 /* Definitions for peripheral AXI_TIMER_1 */
 #define XPAR_AXI_TIMER_1_DEVICE_ID 1U
 #define XPAR_AXI_TIMER_1_BASEADDR 0x42810000U
 #define XPAR_AXI_TIMER_1_HIGHADDR 0x4281FFFFU
-#define XPAR_AXI_TIMER_1_CLOCK_FREQ_HZ  100000000U
+#define XPAR_AXI_TIMER_1_CLOCK_FREQ_HZ 100000000U
 
 
 /* Definitions for peripheral AXI_TIMER_2 */
 #define XPAR_AXI_TIMER_2_DEVICE_ID 2U
 #define XPAR_AXI_TIMER_2_BASEADDR 0x42820000U
 #define XPAR_AXI_TIMER_2_HIGHADDR 0x4282FFFFU
-#define XPAR_AXI_TIMER_2_CLOCK_FREQ_HZ  100000000U
+#define XPAR_AXI_TIMER_2_CLOCK_FREQ_HZ 100000000U
 
 
 /* Definitions for peripheral AXI_TIMER_3 */
 #define XPAR_AXI_TIMER_3_DEVICE_ID 3U
 #define XPAR_AXI_TIMER_3_BASEADDR 0x42830000U
 #define XPAR_AXI_TIMER_3_HIGHADDR 0x4283FFFFU
-#define XPAR_AXI_TIMER_3_CLOCK_FREQ_HZ  100000000U
+#define XPAR_AXI_TIMER_3_CLOCK_FREQ_HZ 100000000U
 
 
 /******************************************************************/

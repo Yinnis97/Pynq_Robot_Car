@@ -1,0 +1,15 @@
+
+#include "Functions.h"
+
+int main()
+{
+    init_platform();
+
+    GPIO_Initialize();
+    MPU_Initialize();
+    PWM_Initialize();
+
+    Main_Loop();
+
+    return EXIT_FAILURE;
+}

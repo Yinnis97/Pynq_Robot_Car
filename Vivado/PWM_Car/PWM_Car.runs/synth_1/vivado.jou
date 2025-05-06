@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sun May  4 10:38:46 2025
-# Process ID: 4560
+# Start of session at: Mon May  5 21:22:44 2025
+# Process ID: 18236
 # Current directory: C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1
 # Command line: vivado.exe -log design_1_wrapper.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_wrapper.tcl
 # Log file: C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/synth_1/design_1_wrapper.vds
@@ -17,8 +17,8 @@
 # CPU Physical cores:6
 # CPU Logical cores :12
 # Host memory       :16442 MB
-# Swap memory       :1084 MB
-# Total Virtual     :17527 MB
-# Available Virtual :6142 MB
+# Swap memory       :1906 MB
+# Total Virtual     :18348 MB
+# Available Virtual :3031 MB
 #-----------------------------------------------------------
 source design_1_wrapper.tcl -notrace

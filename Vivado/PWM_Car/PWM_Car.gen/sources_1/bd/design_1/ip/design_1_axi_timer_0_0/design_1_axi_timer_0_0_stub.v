@@ -2,7 +2,7 @@
 // Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 // --------------------------------------------------------------------------------
 // Tool Version: Vivado v.2024.1 (win64) Build 5076996 Wed May 22 18:37:14 MDT 2024
-// Date        : Sun May  4 10:38:28 2025
+// Date        : Mon May  5 21:14:35 2025
 // Host        : 5CD322B2FW running 64-bit major release  (build 9200)
 // Command     : write_verilog -force -mode synth_stub -rename_top design_1_axi_timer_0_0 -prefix
 //               design_1_axi_timer_0_0_ design_1_axi_timer_1_0_stub.v

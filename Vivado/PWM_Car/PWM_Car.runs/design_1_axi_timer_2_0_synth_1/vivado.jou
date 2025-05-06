@@ -3,8 +3,8 @@
 # SW Build 5076996 on Wed May 22 18:37:14 MDT 2024
 # IP Build 5075265 on Wed May 22 21:45:21 MDT 2024
 # SharedData Build 5076995 on Wed May 22 18:29:18 MDT 2024
-# Start of session at: Sun May  4 10:38:33 2025
-# Process ID: 8020
+# Start of session at: Mon May  5 21:14:39 2025
+# Process ID: 6032
 # Current directory: C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/design_1_axi_timer_2_0_synth_1
 # Command line: vivado.exe -log design_1_axi_timer_2_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source design_1_axi_timer_2_0.tcl
 # Log file: C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.runs/design_1_axi_timer_2_0_synth_1/design_1_axi_timer_2_0.vds
@@ -17,8 +17,8 @@
 # CPU Physical cores:6
 # CPU Logical cores :12
 # Host memory       :16442 MB
-# Swap memory       :2749 MB
-# Total Virtual     :19192 MB
-# Available Virtual :3636 MB
+# Swap memory       :4098 MB
+# Total Virtual     :20541 MB
+# Available Virtual :4051 MB
 #-----------------------------------------------------------
 source design_1_axi_timer_2_0.tcl -notrace

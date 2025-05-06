@@ -71,7 +71,10 @@ set_property XPM_LIBRARIES {XPM_CDC XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language VHDL [current_project]
 set_property board_part tul.com.tw:pynq-z2:part0:1.0 [current_project]
-set_property ip_repo_paths c:/DevWorks/Robot_Car_PYNQ/Vivado/ip_repo/SpeedSensor_IP_1_0 [current_project]
+set_property ip_repo_paths {
+  c:/DevWorks/Robot_Car_PYNQ/Vivado/ip_repo/SpeedSensor_IP_1_0
+  c:/DevWorks/Robot_Car_PYNQ/Vivado/ip_repo_HC_SR04/HC_SR04_IP_1_0
+} [current_project]
 update_ip_catalog
 set_property ip_output_repo c:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/PWM_Car.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
