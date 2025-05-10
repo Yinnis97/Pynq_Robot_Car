@@ -78,3 +78,4 @@ platform config -updatehw {C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/Robot_Car_X
 platform clean
 platform config -updatehw {C:/DevWorks/Robot_Car_PYNQ/Vivado/PWM_Car/Robot_Car_XSA.xsa}
 platform generate
+platform generate
