@@ -262,3 +262,10 @@ timestamp=[2025-05-06 13:17:33], mode=BUILD, duration=0:00:00.813, duration_ms=8
 timestamp=[2025-05-06 13:18:43], mode=BUILD, duration=0:00:00.810, duration_ms=810, data={name=PWM_Car_App, configuration=Debug, clean_build=false}
 timestamp=[2025-05-06 13:23:56], mode=BUILD, duration=0:00:00.814, duration_ms=814, data={name=PWM_Car_App, configuration=Debug, clean_build=false}
 timestamp=[2025-05-06 13:25:01], mode=BUILD, duration=0:00:00.810, duration_ms=810, data={name=PWM_Car_App, configuration=Debug, clean_build=false}
+timestamp=[2025-05-06 13:33:21], mode=BUILD, duration=0:00:00.856, duration_ms=856, data={name=PWM_Car_App, configuration=Debug, clean_build=false}
+timestamp=[2025-05-07 08:30:02], mode=WORKBENCH_START, duration=0:00:08.209, duration_ms=8209, data={}
+timestamp=[2025-05-07 08:30:03], mode=WORKBENCH_UI_INIT, duration=0:00:00.720, duration_ms=720, data={editors_count=4, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=PWM_Car_App,PWM_Car_App_system,PWM_Car_XSA,RemoteSystemsTempFiles}
+timestamp=[2025-05-07 08:30:03], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.119, duration_ms=119, data={}
+timestamp=[2025-05-10 12:25:53], mode=WORKBENCH_START, duration=0:00:07.468, duration_ms=7468, data={}
+timestamp=[2025-05-10 12:25:54], mode=WORKBENCH_UI_INIT, duration=0:00:00.681, duration_ms=681, data={editors_count=4, platform_editors_count=0, projects_count=4, platform_projects_count=1, active_platform_editor=false, projects=PWM_Car_App,PWM_Car_App_system,PWM_Car_XSA,RemoteSystemsTempFiles}
+timestamp=[2025-05-10 12:25:54], mode=PLATFORM_REPOSITORY_INIT, duration=0:00:00.126, duration_ms=126, data={}

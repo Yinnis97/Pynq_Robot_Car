@@ -16,10 +16,3 @@ int main()
     return EXIT_FAILURE;
 }
 
-
-/*
- * TO DO :
- * 	MAKE MPU GENERATE INTERRUPTS
- *
- *
- */

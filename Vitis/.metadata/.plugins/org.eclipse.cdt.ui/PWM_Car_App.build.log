@@ -1,4 +1,4 @@
-13:25:00 **** Incremental Build of configuration Debug for project PWM_Car_App ****
+23:40:18 **** Incremental Build of configuration Release for project PWM_Car_App ****
 make all 
 C:/Xilinx/Vitis/2024.1/gnuwin/bin/make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -6,13 +6,21 @@ a9-linaro-pre-build-step
 C:/Xilinx/Vitis/2024.1/gnuwin/bin/make --no-print-directory main-build
 'Building file: ../src/helloworld.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/DevWorks/Robot_Car_PYNQ/Vitis/PWM_Car_XSA/export/PWM_Car_XSA/sw/PWM_Car_XSA/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/DevWorks/Robot_Car_PYNQ/Vitis/PWM_Car_XSA/export/PWM_Car_XSA/sw/PWM_Car_XSA/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
 In file included from ../src/helloworld.c:2:
-../src/Functions.h: In function 'MPU_Read':
-../src/Functions.h:205:13: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
-  205 |         int Status;
-      |             ^~~~~~
+../src/Functions.h: In function 'PWM_Set':
+../src/Functions.h:108:35: warning: format '%d' expects argument of type 'int', but argument 2 has type 'long unsigned int' [-Wformat=]
+  108 |         printf("Duty cycle set : %d%%\n\r",(highTime/PWM_PERIOD)*100);
+      |                                  ~^        ~~~~~~~~~~~~~~~~~~~~~~~~~
+      |                                   |                             |
+      |                                   int                           long unsigned int
+      |                                  %ld
 'Finished building: ../src/helloworld.c'
+' '
+'Building file: ../src/platform.c'
+'Invoking: ARM v7 gcc compiler'
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/platform.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/DevWorks/Robot_Car_PYNQ/Vitis/PWM_Car_XSA/export/PWM_Car_XSA/sw/PWM_Car_XSA/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/platform.d" -MT"src/platform.o" -o "src/platform.o" "../src/platform.c"
+'Finished building: ../src/platform.c'
 ' '
 'Building target: PWM_Car_App.elf'
 'Invoking: ARM v7 gcc linker'
@@ -22,9 +30,9 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size PWM_Car_App.elf  |tee "PWM_Car_App.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  73571	   3456	  23024	 100051	  186d3	PWM_Car_App.elf
+  65323	   2672	  22976	  90971	  1635b	PWM_Car_App.elf
 'Finished building: PWM_Car_App.elf.size'
 ' '
 
-13:25:01 Build Finished (took 800ms)
+23:40:19 Build Finished (took 1s.7ms)
 

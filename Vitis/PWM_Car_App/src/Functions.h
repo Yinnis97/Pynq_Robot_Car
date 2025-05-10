@@ -393,7 +393,7 @@ void Main_Loop(void)
 
 		HCSR04_Read();
 		Speed_Read();
-		//MPU_Read();
+		MPU_Read();
 
 		if(XGpio_DiscreteRead(&gpio_in, SWS_CHANNEL) & 0x01)
 		{
