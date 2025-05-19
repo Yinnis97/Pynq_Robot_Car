@@ -7,8 +7,8 @@ int main()
 
     GPIO_Initialize();
     MPU_Initialize();
-    Intc_Initialize();
-    MPU_Enable_Intr();
+    //Intc_Initialize();
+    //MPU_Enable_Intr();
     PWM_Initialize();
 
     Main_Loop();

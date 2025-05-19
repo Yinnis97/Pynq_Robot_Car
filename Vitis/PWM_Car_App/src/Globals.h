@@ -28,13 +28,16 @@
 #define BTNS_CHANNEL 					1
 #define SWS_CHANNEL 					2
 
-// TIMER
+// PWM
 #define AXI_TIMER_ID_1					XPAR_AXI_TIMER_0_DEVICE_ID
 #define AXI_TIMER_ID_2					XPAR_AXI_TIMER_1_DEVICE_ID
 #define AXI_TIMER_ID_3					XPAR_AXI_TIMER_2_DEVICE_ID
 #define AXI_TIMER_ID_4					XPAR_AXI_TIMER_3_DEVICE_ID
 #define PWM_PERIOD              		5000000    						// PWM period in (5 ms)
-#define DUTYCYCLE_DIVISOR		      	2            					// Duty cycle Divisor
+#define PWM_CYCLE_1						0.5
+#define PWM_CYCLE_2						0.7
+#define PWM_CYCLE_3						0.8
+#define PWM_CYCLE_4						0.9
 
 // IIC
 #define IIC_DEVICE_ID					XPAR_PS7_I2C_0_DEVICE_ID

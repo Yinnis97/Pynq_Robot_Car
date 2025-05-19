@@ -11,6 +11,7 @@ void		HCSR04_Read			(void);
 void		Speed_Read			(void);
 void		MPU_Read			(void);
 void 		Print_Values		(void);
+void 		PWM_Config			(u32 hightTime);
 void 		Check_Status		(int status,char* status_msg);
 void		MPU_Intr_Handler	(void *baseaddr);
 void		IntrSystemSetup		(void);
@@ -59,7 +60,7 @@ void PWM_Initialize(void)
 	XTmrCtr_PwmDisable(&TimerCounterInst_4);
 
 	// Set hightime
-	highTime = PWM_PERIOD / DUTYCYCLE_DIVISOR;
+	highTime = PWM_PERIOD * PWM_CYCLE_1;
 	XGpio_DiscreteWrite(&gpio_out, LEDS_CHANNEL, 0b1000);
 
 	// Configure PWM
@@ -101,36 +102,43 @@ void MPU_Initialize(void)
 
 void PWM_Set(void)
 {
-	// Disable PWM for reconfiguration
-	XTmrCtr_PwmDisable(&TimerCounterInst_1);
-	XTmrCtr_PwmDisable(&TimerCounterInst_2);
-	XTmrCtr_PwmDisable(&TimerCounterInst_3);
-	XTmrCtr_PwmDisable(&TimerCounterInst_4);
-
 	// Set hightime
 	rv = XGpio_DiscreteRead(&gpio_in, BTNS_CHANNEL);
 	switch(rv)
 	{
 		case 1:
 			XGpio_DiscreteWrite(&gpio_out, LEDS_CHANNEL, rv);
-			highTime = PWM_PERIOD * 0.9;
+			highTime = PWM_PERIOD * PWM_CYCLE_4;
+			PWM_Config(highTime);
 			break;
 		case 2:
 			XGpio_DiscreteWrite(&gpio_out, LEDS_CHANNEL, rv);
-			highTime = PWM_PERIOD * 0.8;
+			highTime = PWM_PERIOD * PWM_CYCLE_3;
+			PWM_Config(highTime);
 			break;
 		case 4:
 			XGpio_DiscreteWrite(&gpio_out, LEDS_CHANNEL, rv);
-			highTime = PWM_PERIOD * 0.7;
+			highTime = PWM_PERIOD * PWM_CYCLE_2;
+			PWM_Config(highTime);
 			break;
 		case 8:
 			XGpio_DiscreteWrite(&gpio_out, LEDS_CHANNEL, rv);
-			highTime = PWM_PERIOD * 0.5;
+			highTime = PWM_PERIOD * PWM_CYCLE_1;
+			PWM_Config(highTime);
 			break;
 		default:
-			highTime = highTime;
 			break;
 	}
+}
+
+void PWM_Config(u32 highTime)
+{
+	// Disable PWM for reconfiguration
+	XTmrCtr_PwmDisable(&TimerCounterInst_1);
+	XTmrCtr_PwmDisable(&TimerCounterInst_2);
+	XTmrCtr_PwmDisable(&TimerCounterInst_3);
+	XTmrCtr_PwmDisable(&TimerCounterInst_4);
+
 	// Configure PWM
 	XTmrCtr_PwmConfigure(&TimerCounterInst_1, PWM_PERIOD, highTime);
 	XTmrCtr_PwmConfigure(&TimerCounterInst_2, PWM_PERIOD, highTime);
@@ -143,7 +151,6 @@ void PWM_Set(void)
 	XTmrCtr_PwmEnable(&TimerCounterInst_3);
 	XTmrCtr_PwmEnable(&TimerCounterInst_4);
 }
-
 
 void HCSR04_Read(void)
 {
@@ -219,8 +226,8 @@ void MPU_Read(void)
 	mpu_data.acc_y = ((MPU_buffer[2] << 8) | MPU_buffer[3]) - ACC_Y_CORRECTION;
 	mpu_data.acc_z = ((MPU_buffer[4] << 8) | MPU_buffer[5]) - ACC_Z_CORRECTION;
 
-	// Temperature in degrees C = (TEMP_OUT Register Value as a signed quantity)/340 + 36.53
-	mpu_data.temp  = (((MPU_buffer[6] << 8) | MPU_buffer[7]) / 340) + 36.53;
+	// Temperature in degrees C
+	mpu_data.temp  = ((((MPU_buffer[6] << 8) | MPU_buffer[7]) / 340) + 36.53) - 200;
 
 	mpu_data.gy_x  = ((MPU_buffer[8] << 8) | MPU_buffer[9]) + GYR_X_CORRECTION;
 	mpu_data.gy_y  = ((MPU_buffer[10] << 8) | MPU_buffer[11]) + GYR_Y_CORRECTION;
@@ -268,7 +275,7 @@ void Check_Status(int status, char* status_msg)
 	}
 }
 
-
+/*
 void MPU_Intr_Handler(void *baseaddr)
 {
 	// Disable GPIO Interrupts
@@ -379,7 +386,7 @@ void MPU_Enable_Intr(void)
 
     printf("Status : %d \n\r",Status);
 }
-
+*/
 
 void Main_Loop(void)
 {
@@ -388,7 +395,6 @@ void Main_Loop(void)
 		if(XGpio_DiscreteRead(&gpio_in, SWS_CHANNEL) & 0x02)
 		{
 			PWM_Set();
-			sleep(1);
 		}
 
 		HCSR04_Read();
@@ -398,8 +404,9 @@ void Main_Loop(void)
 		if(XGpio_DiscreteRead(&gpio_in, SWS_CHANNEL) & 0x01)
 		{
 			Print_Values();
-			sleep(1);
+			usleep_A9(1000);
 		}
+
 		usleep_A9(100);
 	}
 }

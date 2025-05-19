@@ -1,4 +1,4 @@
-12:33:54 **** Incremental Build of configuration Debug for project PWM_Car_App ****
+14:18:58 **** Incremental Build of configuration Release for project PWM_Car_App ****
 make all 
 C:/Xilinx/Vitis/2024.1/gnuwin/bin/make --no-print-directory pre-build
 a9-linaro-pre-build-step
@@ -6,11 +6,11 @@ a9-linaro-pre-build-step
 C:/Xilinx/Vitis/2024.1/gnuwin/bin/make --no-print-directory main-build
 'Building file: ../src/helloworld.c'
 'Invoking: ARM v7 gcc compiler'
-arm-none-eabi-gcc -Wall -O0 -g3 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/DevWorks/Robot_Car_PYNQ/Vitis/PWM_Car_XSA/export/PWM_Car_XSA/sw/PWM_Car_XSA/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
+arm-none-eabi-gcc -Wall -O2 -c -fmessage-length=0 -MT"src/helloworld.o" -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -IC:/DevWorks/Robot_Car_PYNQ/Vitis/PWM_Car_XSA/export/PWM_Car_XSA/sw/PWM_Car_XSA/standalone_ps7_cortexa9_0/bspinclude/include -MMD -MP -MF"src/helloworld.d" -MT"src/helloworld.o" -o "src/helloworld.o" "../src/helloworld.c"
 In file included from ../src/helloworld.c:2:
 ../src/Functions.h: In function 'MPU_Read':
-../src/Functions.h:205:13: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
-  205 |         int Status;
+../src/Functions.h:212:13: warning: variable 'Status' set but not used [-Wunused-but-set-variable]
+  212 |         int Status;
       |             ^~~~~~
 'Finished building: ../src/helloworld.c'
 ' '
@@ -22,9 +22,9 @@ arm-none-eabi-gcc -mcpu=cortex-a9 -mfpu=vfpv3 -mfloat-abi=hard -Wl,-build-id=non
 'Invoking: ARM v7 Print Size'
 arm-none-eabi-size PWM_Car_App.elf  |tee "PWM_Car_App.elf.size"
    text	   data	    bss	    dec	    hex	filename
-  72995	   3456	  23024	  99475	  18493	PWM_Car_App.elf
+  66303	   2688	  23008	  91999	  1675f	PWM_Car_App.elf
 'Finished building: PWM_Car_App.elf.size'
 ' '
 
-12:33:55 Build Finished (took 854ms)
+14:18:59 Build Finished (took 1s.151ms)
 
